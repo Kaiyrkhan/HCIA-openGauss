@@ -10,7 +10,7 @@
 $ tar -jxf openGauss-All-6.0.5-openEuler22.03-x86_64.tar.gz
 $ ls -lb
 ```
-### Step1 - Hardware and Software Requirements
+### Step2 - Hardware and Software Requirements
 
 Table1 - **Hardware Requirements**
 | Item    | Minimum Requirement |
@@ -62,4 +62,27 @@ mkfs.ext4 -N 1500000000 /dev/sdb1
 ```shell
 $ rpm -q bzip2
 $ python3 --version
+```
+
+### Step3 - installing Dependency Packages
+
+Software Dependency Requirements:  
+  1) libaio-devel  
+  2) readline-devel  
+  3) expect  
+
+
+```shell
+# install the dependency packages
+
+$ sudo dnf install libaio-devel readline-devel expect
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
 ```
