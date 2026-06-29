@@ -1,7 +1,7 @@
 # HCIA-openGauss
 
 ### Course Contents
-1) Installation Environment
+1) Installation & Deployment
 2) ...
 
 ## Reference Links
