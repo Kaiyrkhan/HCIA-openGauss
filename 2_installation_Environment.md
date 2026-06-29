@@ -1,6 +1,4 @@
-# Installation & Deployment
-
-## 1) Preparing the Installation Environment
+# Preparing the Installation Environment
 
 ### Step1 - Obtaining installation Package
 
