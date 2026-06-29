@@ -147,7 +147,7 @@ $ systemctl show systemd-logind | grep RemoveIPC
 RemoveIPC=no
 ```
 
-### Step8 - Disabling History Command
+### Step9 - Disabling History Command
 
 ```shell
 $ sudo vi /etc/profile
