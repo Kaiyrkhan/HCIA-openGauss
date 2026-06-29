@@ -12,7 +12,7 @@ $ ls -lb
 ```
 ### Step2 - Hardware and Software Requirements
 
-Table1 - **Hardware Requirements**
+Table - **Hardware Requirements**
 | Item    | Minimum Requirement |
 |---------|---------------------|
 | CPU     | 2 cores             |
@@ -41,7 +41,7 @@ $ ethtool ens32
 Speed: 1000Mb/s
 ```
 
-Table2 - **Software Requirements**
+Table - **Software Requirements**
 | Software          | Description         |
 |-------------------|---------------------|
 | Linux OS          | openEuler 22.03 LTS |
@@ -66,19 +66,25 @@ $ python3 --version
 
 ### Step3 - installing Dependency Packages
 
-Software Dependency Requirements:  
-  1) libaio-devel  
-  2) readline-devel  
-  3) expect  
-
+Table - **Software Dependency Requirements**
+| Software       | Recommended Version |
+|----------------|---------------------|
+| libaio-devel   | 0.3.109-13          |
+| readline-devel | 7.0-13              |
+| expect         | -                   |
 
 ```shell
 # install the dependency packages
-
 $ sudo dnf install libaio-devel readline-devel expect
 ```
 
+### Step4 - Disabling SELinux and firewalld
+
 ```shell
+$ sudo vi /etc/selinux/config
+SELINUX=disabled
+
+$ sudo reboot
 ```
 
 ```shell
