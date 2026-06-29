@@ -2,7 +2,7 @@
 
 ## Preparing the Installation Environment
 
-### Step1 - Obtaining the Installation Package
+### Step1 - Obtaining installation Package
 
 **Download Link:** https://opengauss.org/en/download/  
 
