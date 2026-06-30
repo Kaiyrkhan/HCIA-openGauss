@@ -19,13 +19,13 @@ $ sudo dnf install tar
 $ sudo tar -xf openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2 -C /opt/openGauss
 
 $ ls -l /opt/openGauss/
-drwxr-xr-x root root   bin
-drwxr-xr-x root root   etc
-drwxr-xr-x root root   include
-drwxr-xr-x root root   lib
-drwxr-xr-x root root   share
-drwxr-xr-x root root   simpleInstall
--rw-r--r-- root root   version.cfg
+drwxr-xr-x  root root   bin
+drwxr-xr-x  root root   etc
+drwxr-xr-x  root root   include
+drwxr-xr-x  root root   lib
+drwxr-xr-x  root root   share
+drwxr-xr-x  root root   simpleInstall
+-rw-r--r--  root root   version.cfg
 ```
 
 ```shell
