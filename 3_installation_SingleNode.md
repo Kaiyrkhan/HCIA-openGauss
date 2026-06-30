@@ -10,6 +10,8 @@ $ getent group | grep dbgroup
 openGauss Default Port Number: 5432/TCP  
 ```shell
 $ ss -tulpn | grep 5432
+
+$ sudo dnf install net-tools
 $ sudo netstat -tulpn | grep 5432
 ```
 
