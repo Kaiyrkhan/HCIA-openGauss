@@ -3,7 +3,7 @@
 WinSCP Download Link: https://winscp.net/eng/download.php  
 ![images](./images/img.png)  
 
-Create a Folder
+Create Directory
 ```shell
 $ sudo mkdir /opt/openGauss
 $ sudo chown -R omm:dbgroup /opt/openGauss
