@@ -78,7 +78,7 @@ $ dnf makecache
 
 ```shell
 # install the dependency packages
-$ sudo dnf install -y libaio-devel readline-devel expect
+$ sudo dnf install -y libaio-devel readline-devel expect net-tools
 ```
 
 ```shell
