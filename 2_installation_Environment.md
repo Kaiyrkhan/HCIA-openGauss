@@ -5,9 +5,10 @@
 **Download Link:** https://opengauss.org/en/download/  
 
 ```shell
+student@openGauss~$ ls -lh
 openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
 
-$ sha256sum openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
+student@openGauss~$ sha256sum openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
 ```
 ### Step2 - Hardware and Software Requirements
 
@@ -54,8 +55,8 @@ $ cat /etc/system-release
 ```
 
 ```shell
-df -i  
-mkfs.ext4 -N 1500000000 /dev/sdb1  
+$ df -i  
+$ mkfs.ext4 -N 1500000000 /dev/sdb1  
 ```
 
 ```shell
@@ -73,106 +74,91 @@ Table - **Software Dependency Requirements**
 | expect         | -                   |
 
 ```shell
-$ dnf clean all
-$ dnf makecache
+student@openGauss~$ dnf clean all
+student@openGauss~$ dnf makecache
 ```
 
 ```shell
 # install the dependency packages
-$ sudo dnf install -y libaio-devel readline-devel expect net-tools tar
+student@openGauss~$ sudo dnf install -y libaio-devel readline-devel expect net-tools tar
 ```
 
 ```shell
-$ rpm -q libaio-devel readline-devel expect
+student@openGauss~$ rpm -q libaio-devel readline-devel expect
 ```
 
 ### Step4 - Disabling SELinux and firewalld
 
 ```shell
-$ sudo vi /etc/selinux/config
+student@openGauss~$ sudo vi /etc/selinux/config
 SELINUX=disabled
 :wq
 
-$ sudo reboot
+student@openGauss~$ sudo reboot
 ```
 
 ```shell
 # Disable the firewall service
-$ systemctl disable firewalld
-$ sudo systemctl is-enabled firewalld
+student@openGauss~$ systemctl disable firewalld
+student@openGauss~$ sudo systemctl is-enabled firewalld
 
 # Stop the firewall service
-$ sudo systemctl stop firewalld
-$ sudo systemctl status firewalld
+student@openGauss~$ sudo systemctl stop firewalld
+student@openGauss~$ sudo systemctl status firewalld
 ```
 
 ### Step5 - Setting Character Set Parameters
 
 ```shell
-$ locale
+student@openGauss~$ locale
 
-$ localectl set-locale LANG=en_US.UTF-8
-$ echo 'export LANG=en_US.UTF-8' >> /etc/profile
-$ source /etc/profile
+student@openGauss~$ localectl set-locale LANG=en_US.UTF-8
+student@openGauss~$ echo 'export LANG=en_US.UTF-8' >> /etc/profile
+student@openGauss~$ source /etc/profile
 
-$ locale
+student@openGauss~$ locale
 LANG=en_US.UTF-8
 ```
 
 ### Step6 - Setting Time Zone and System Clock
 
 ```shell
-$ sudo cp /usr/share/zoneinfo/$Locale/$Time zone /etc/localtime
-$ date -s "Sat Sep 27 16:00:07 CST 2020"
+student@openGauss~$ sudo cp /usr/share/zoneinfo/$Locale/$Time zone /etc/localtime
+student@openGauss~$ date -s "Sat Sep 27 16:00:07 CST 2020"
 ```
 
 ### Step7 - Disabling Swap Memory (Optional)
 
 ```shell
-$ free -h
-$ swapon --show
-$ cat /proc/swaps
+student@openGauss~$ free -h
+student@openGauss~$ swapon --show
+student@openGauss~$ cat /proc/swaps
 ```
 
 ```shell
 Disable (temporary) the Swap Memory 
-$ sudo swapoff -a
+student@openGauss~$ sudo swapoff -a
 
 Enable the Swap Memory
-$ sudo swapon -a
+student@openGauss~$ sudo swapon -a
 ```
 
 ### Step8 - Disabling RemoveIPC
 
 ```shell
-$ loginctl show-session | grep RemoveIPC
+student@openGauss~$ loginctl show-session | grep RemoveIPC
 RemoveIPC=no
 
-$ systemctl show systemd-logind | grep RemoveIPC
+student@openGauss~$ systemctl show systemd-logind | grep RemoveIPC
 RemoveIPC=no
 ```
 
 ### Step9 - Disabling History Command
 
 ```shell
-$ sudo vi /etc/profile
-$ source /etc/profile
+student@openGauss~$ sudo vi /etc/profile
+student@openGauss~$ source /etc/profile
 
-$  echo $HISTSIZE
+student@openGauss~$ echo $HISTSIZE
 0
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
-```
-
-```shell
 ```
