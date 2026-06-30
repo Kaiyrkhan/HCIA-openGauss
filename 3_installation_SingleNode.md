@@ -1,5 +1,19 @@
 # Server-based installation on a Single Node
 
+openGauss User
+```shell
+$ id omm
+$ getent passwd | grep omm
+$ getent group | grep dbgroup
+```
+
+openGauss Port
+```shell
+$ ss -tulpn | grep 5432
+$ sudo netstat -tulpn | grep 5432
+```
+> openGauss Default Port Number: 5432/TCP  
+
 WinSCP Download Link: https://winscp.net/eng/download.php  
 
 ![images](./images/winscp_sftp.png)  
