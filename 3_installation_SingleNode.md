@@ -49,7 +49,7 @@ install openGauss
 ```shell
 $ sh install.sh -w "xxxx" && source ~/.bashrc
 ```
-`-w` — мәліметтер қорына құпиясөз орнату   
+`-w` – мәліметтер қорына құпиясөз орнату   
 
 ```shell
 ```
