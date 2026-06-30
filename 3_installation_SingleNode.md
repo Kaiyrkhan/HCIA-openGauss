@@ -1,18 +1,29 @@
 # Server-based installation on a Single Node
 
-openGauss Default Username: omm
+
+**Configure openGauss User and Group**
+```shell
+[student@openGauss ~]$ sudo groupadd dbgroup
+
+[student@openGauss ~]$ sudo useradd -g dbgroup omm
+
+[student@openGauss ~]$ sudo passwd omm
+New Password: 123
+```
+
 ```shell
 $ id omm
 $ getent passwd | grep omm
 $ getent group | grep dbgroup
 ```
-
-openGauss Default Port Number: 5432/TCP  
+> openGauss default username: **omm**  
+  
 ```shell
 $ ss -tulpn | grep 5432
 
 $ netstat -tulpn | grep 5432
 ```
+> openGauss default port number: **5432/TCP**  
 
 WinSCP Download Link: https://winscp.net/eng/download.php  
 
