@@ -56,6 +56,7 @@ password: 123
 
 ```shell
 $ cd /opt/openGauss/simpleInstall
+
 $ sh install.sh -w "Huawei@123"
 Would you like to create a demo database (yes/no)? yes
 ```
