@@ -1,4 +1,4 @@
-# Installation on a Single Node
+# Server-based installation on a Single Node
 
 
 ```shell
