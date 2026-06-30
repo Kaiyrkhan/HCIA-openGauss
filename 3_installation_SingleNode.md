@@ -57,7 +57,7 @@ $ source ~/.bashrc
 > Database Name: sgnode  
 > Database Directory: /opt/openGauss/data/single_node  
 
-error SEMMNI
+*Егер, скрипт файлды орындағаннан кейін **"the maximum number of SEMMNI is not correct..."** деген қате шықса, төмендегі командаларды орындаңыз!*  
 ```shell
 $ sysctl -w kernel.sem="250 85000 250 330"
 
