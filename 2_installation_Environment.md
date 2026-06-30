@@ -74,9 +74,15 @@ Table - **Software Dependency Requirements**
 ```shell
 $ dnf clean all
 $ dnf makecache
+```
 
+```shell
 # install the dependency packages
 $ sudo dnf install -y libaio-devel readline-devel expect
+```
+
+```shell
+$ rpm -q libaio-devel readline-devel expect
 ```
 
 ### Step4 - Disabling SELinux and firewalld
