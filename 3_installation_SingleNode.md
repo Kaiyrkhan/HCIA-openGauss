@@ -47,6 +47,10 @@ drwxr-xr-x  root root   simpleInstall
 
 install openGauss
 ```shell
+$ su - omm
+```
+
+```shell
 $ cd /opt/openGauss/simpleInstall
 $ sudo sh install.sh -w "Huawei@123"
 $ sudo source ~/.bashrc
