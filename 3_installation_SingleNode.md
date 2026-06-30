@@ -15,7 +15,7 @@ student@openGauss~$ id omm
 student@openGauss~$ getent passwd | grep omm
 student@openGauss~$ getent group | grep dbgroup
 ```
-> openGauss default username: **omm**  
+> Linux database username: **omm**  
   
 ```shell
 student@openGauss~$ ss -tulpn | grep 5432
