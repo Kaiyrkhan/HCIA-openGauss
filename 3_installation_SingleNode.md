@@ -25,14 +25,12 @@ student@openGauss~$ id omm
 student@openGauss~$ getent passwd | grep omm
 student@openGauss~$ getent group | grep dbgroup
 ```
-> Linux database username: **omm**  
   
 ```shell
 student@openGauss~$ ss -tulpn | grep 5432
 
 student@openGauss~$ netstat -tulpn | grep 5432
 ```
-> openGauss default port number: **5432/TCP**  
 
 WinSCP Download Link: https://winscp.net/eng/download.php  
 
