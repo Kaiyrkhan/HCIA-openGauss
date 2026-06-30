@@ -50,7 +50,7 @@ install openGauss
 $ sh install.sh -w "xxxx" && source ~/.bashrc
 ```
 `-w` – мәліметтер қорына құпиясөз орнату  
-`source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы, gsql) PATH-ға енгізу  
+`source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы, gsql) PATH-ға енгізеді  
 
 ```shell
 ```
