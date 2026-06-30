@@ -5,8 +5,7 @@
 **Download Link:** https://opengauss.org/en/download/  
 
 ```shell
-$ ls -lh
-openGauss-All-6.0.5-openEuler22.03-x86_64.tar.gz
+openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
 ```
 ### Step2 - Hardware and Software Requirements
 
