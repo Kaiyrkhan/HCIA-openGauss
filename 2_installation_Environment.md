@@ -6,6 +6,8 @@
 
 ```shell
 openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
+
+$ sha256sum openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
 ```
 ### Step2 - Hardware and Software Requirements
 
