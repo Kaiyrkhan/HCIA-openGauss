@@ -11,8 +11,7 @@ openGauss Default Port Number: 5432/TCP
 ```shell
 $ ss -tulpn | grep 5432
 
-$ sudo dnf install net-tools
-$ sudo netstat -tulpn | grep 5432
+$ netstat -tulpn | grep 5432
 ```
 
 WinSCP Download Link: https://winscp.net/eng/download.php  
