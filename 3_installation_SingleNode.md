@@ -48,6 +48,7 @@ drwxr-xr-x  root root   simpleInstall
 install openGauss
 ```shell
 $ su - omm
+password: 123
 ```
 
 ```shell
