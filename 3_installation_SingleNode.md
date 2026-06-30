@@ -45,6 +45,10 @@ drwxr-xr-x  root root   simpleInstall
 -rw-r--r--  root root   version.cfg
 ```
 
+```shell
+$ sudo chown -R omm:dbgroup /opt/openGauss
+```
+
 install openGauss
 ```shell
 $ su - omm
@@ -53,8 +57,17 @@ password: 123
 
 ```shell
 $ cd /opt/openGauss/simpleInstall
-$ sudo sh install.sh -w "Huawei@123"
-$ sudo source ~/.bashrc
+$ sh install.sh -w "Huawei@123"
+Would you like to create a demo database (yes/no)? yes
+
+$ source ~/.bashrc
+-bash: ulimit: open files: cannot modify limit: Operation not permitted
+
+$ vi .bashrc
+# ulimit -n 1000000
+:wq
+
+$ source ~/.bashrc
 ```
 `-w` – мәліметтер қорына құпиясөз орнату  
 `source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
@@ -76,11 +89,11 @@ Verification
 $ ps ux | grep gaussdb          // Database process-нің іске қосылғанын тексеру
 
 Нәтиже:
-
+/opt/openGauss/bin/gaussdb -D /opt/openGauss/data/single_node
 ```
 
 ```shell
-$ sudo gs_ctl query -D /opt/openGauss/data/single_node          // Database status-ын тексеру
+$ gs_ctl query -D /opt/openGauss/data/single_node          // Database status-ын тексеру
 
 Нәтиже:
 local_role : Normal
