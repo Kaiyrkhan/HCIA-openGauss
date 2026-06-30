@@ -48,8 +48,8 @@ drwxr-xr-x  root root   simpleInstall
 install openGauss
 ```shell
 $ cd /opt/openGauss/simpleInstall
-$ sh install.sh -w "Huawei@123"
-$ source ~/.bashrc
+$ sudo sh install.sh -w "Huawei@123"
+$ sudo source ~/.bashrc
 ```
 `-w` – мәліметтер қорына құпиясөз орнату  
 `source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
@@ -59,11 +59,25 @@ $ source ~/.bashrc
 
 *Егер, скрипт файлды орындағаннан кейін **"the maximum number of SEMMNI is not correct..."** деген қате шықса, төмендегі командаларды орындаңыз!*  
 ```shell
-$ sysctl -w kernel.sem="250 85000 250 330"
+$ sudo sysctl -w kernel.sem="250 85000 250 330"
 
 $ sudo vi /etc/sysctl.conf
 kernel.sem="250 85000 250 330"
 :wq
+```
+
+Verification
+```shell
+ps ux | grep gaussdb
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
 ```
 
 ```shell
