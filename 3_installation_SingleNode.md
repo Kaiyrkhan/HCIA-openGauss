@@ -1,6 +1,6 @@
 # Server-based installation on a Single Node
 
-openGauss User
+openGauss Default Username: omm
 ```shell
 $ id omm
 $ getent passwd | grep omm
