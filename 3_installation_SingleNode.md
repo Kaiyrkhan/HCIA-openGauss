@@ -22,11 +22,6 @@ WinSCP Download Link: https://winscp.net/eng/download.php
 Create Directory
 ```shell
 $ sudo mkdir /opt/openGauss
-$ sudo chown -R omm:dbgroup /opt/openGauss
-$ sudo chmod -R 755 /opt/openGauss
-
-$ ls -l /opt
-drwxr-xr-x  omm dbgroup openGauss
 ```
 
 Decompress
@@ -44,8 +39,13 @@ drwxr-xr-x  root root   simpleInstall
 -rw-r--r--  root root   version.cfg
 ```
 
+Permission
 ```shell
 $ sudo chown -R omm:dbgroup /opt/openGauss
+$ sudo chmod -R 755 /opt/openGauss
+
+$ ls -l /opt
+drwxr-xr-x  omm dbgroup openGauss
 ```
 
 install openGauss
