@@ -104,7 +104,14 @@ Receiver info : No information
 ```
 
 ```shell
+$ gsql -d sgnode -U omm -W "Huawei@123" -p 5432
 ```
+`\l` – дерекқорлардың тізімін көру  
+`\c school` – school дерекқорына қосылу  
+`\c finance` – finance дерекқорына қосылу  
+`\dt` – кестелерді көрсету  
+
+
 
 ```shell
 ```
