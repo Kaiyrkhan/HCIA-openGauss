@@ -96,6 +96,8 @@ Normal
 ```
 ![images](./images/opengauss_gs_ctl.png)
 
+**Connecting to openGauss**
+
 ```shell
 omm@openGauss~$ gsql -d sgnode -U omm -W "Huawei@123" -p 5432
 ```
