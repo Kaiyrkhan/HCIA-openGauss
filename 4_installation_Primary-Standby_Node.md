@@ -1,1 +1,1 @@
-# Installation on Primary/Standby Nodes
+# Server-based installation on Primary/Standby Nodes
