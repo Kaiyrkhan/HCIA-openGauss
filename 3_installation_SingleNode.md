@@ -70,8 +70,8 @@ $ source ~/.bashrc
 
 **Verify Database**
 
-> Database Name: sgnode  
-> Database Directory: /opt/openGauss/data/single_node  
+> Database Name: **sgnode**  
+> Database Directory: **/opt/openGauss/data/single_node**  
 
 ```shell
 # Database process-нің іске қосылғанын тексеру
