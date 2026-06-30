@@ -10,6 +10,13 @@
 | install Path          | /opt/openGauss                  |
 | Data Path             | /opt/openGauss/data/single_node |
 
+
+**Hostname**
+student@openGauss~$ sudo vi /etc/hosts
+Shift+} -> Edit mode -> Enter
+192.168.0.103 openGauss
+Normal mode -> :wq
+
 **Configure openGauss User and Group**
 ```shell
 student@openGauss~$ sudo groupadd dbgroup
