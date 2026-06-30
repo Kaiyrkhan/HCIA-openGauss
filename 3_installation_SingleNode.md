@@ -1,6 +1,7 @@
 # Server-based installation on a Single Node
 
 WinSCP Download Link: https://winscp.net/eng/download.php  
+
 ![images](./images/winscp_sftp.png)  
 ![images](./images/winscp_upload.png)  
 
