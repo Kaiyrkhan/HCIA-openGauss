@@ -47,10 +47,12 @@ drwxr-xr-x  root root   simpleInstall
 
 install openGauss
 ```shell
-$ sh install.sh -w "xxxx" && source ~/.bashrc
+$ cd /opt/openGauss/simpleInstall
+$ sh install.sh -w "Huawei@123"
+$ source ~/.bashrc
 ```
 `-w` – мәліметтер қорына құпиясөз орнату  
-`source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы, gsql) PATH-ға енгізеді  
+`source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
 
 ```shell
 ```
