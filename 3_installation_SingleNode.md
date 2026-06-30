@@ -84,6 +84,7 @@ $ ps ux | grep gaussdb          // Database process-нің іске қосылғ
 /opt/openGauss/bin/gaussdb -D /opt/openGauss/data/single_node
 ```
 
+Verify Database
 ```shell
 $ gs_ctl query -D /opt/openGauss/data/single_node          // Database status-ын тексеру
 
