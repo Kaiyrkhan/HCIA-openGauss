@@ -1,27 +1,26 @@
 # Server-based installation on a Single Node
 
-
 **Configure openGauss User and Group**
 ```shell
-[student@openGauss ~]$ sudo groupadd dbgroup
+student@openGauss~$ sudo groupadd dbgroup
 
-[student@openGauss ~]$ sudo useradd -g dbgroup omm
+student@openGauss~$ sudo useradd -g dbgroup omm
 
-[student@openGauss ~]$ sudo passwd omm
+student@openGauss~$ sudo passwd omm
 New Password: 123
 ```
 
 ```shell
-$ id omm
-$ getent passwd | grep omm
-$ getent group | grep dbgroup
+student@openGauss~$ id omm
+student@openGauss~$ getent passwd | grep omm
+student@openGauss~$ getent group | grep dbgroup
 ```
 > openGauss default username: **omm**  
   
 ```shell
-$ ss -tulpn | grep 5432
+student@openGauss~$ ss -tulpn | grep 5432
 
-$ netstat -tulpn | grep 5432
+student@openGauss~$ netstat -tulpn | grep 5432
 ```
 > openGauss default port number: **5432/TCP**  
 
@@ -32,11 +31,11 @@ WinSCP Download Link: https://winscp.net/eng/download.php
 
 **DeCompress**
 ```shell
-$ sudo mkdir /opt/openGauss
+student@openGauss~$ sudo mkdir /opt/openGauss
 
-$ sudo tar -xf openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2 -C /opt/openGauss
+student@openGauss~$ sudo tar -xf openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2 -C /opt/openGauss
 
-$ ls -l /opt/openGauss/
+student@openGauss~$ ls -l /opt/openGauss/
 drwxr-xr-x  root root   bin
 drwxr-xr-x  root root   etc
 drwxr-xr-x  root root   include
@@ -48,34 +47,35 @@ drwxr-xr-x  root root   simpleInstall
 
 **Permission**
 ```shell
-$ sudo chown -R omm:dbgroup /opt/openGauss
-$ sudo chmod -R 755 /opt/openGauss
+student@openGauss~$ sudo chown -R omm:dbgroup /opt/openGauss
+student@openGauss~$ sudo chmod -R 755 /opt/openGauss
 
-$ ls -l /opt
+student@openGauss~$ ls -l /opt
 drwxr-xr-x  omm dbgroup openGauss
 ```
 
 **install openGauss**
 ```shell
-$ su - omm
+student@openGauss~$ su - omm
 password: 123
+omm@openGauss~$
 
-$ cd /opt/openGauss/simpleInstall
+omm@openGauss~$ cd /opt/openGauss/simpleInstall
 
-$ sh install.sh -w "Huawei@123"
+omm@openGauss~$ sh install.sh -w "Huawei@123"
 Would you like to create a demo database (yes/no)? yes
 ```
 `-w` – мәліметтер қорына құпиясөз орнату  
 
 ```shell
-$ source ~/.bashrc
+omm@openGauss~$ source ~/.bashrc
 -bash: ulimit: open files: cannot modify limit: Operation not permitted
 
-$ vi .bashrc
+omm@openGauss~$ vi .bashrc
 # ulimit -n 1000000
 :wq
 
-$ source ~/.bashrc
+omm@openGauss~$ source ~/.bashrc
 ```
 `source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
 
@@ -85,21 +85,19 @@ $ source ~/.bashrc
 > Database Directory: **/opt/openGauss/data/single_node**  
 
 ```shell
-# Database process-нің іске қосылғанын тексеру
-$ ps ux | grep gaussdb
+omm@openGauss~$ ps ux | grep gaussdb
 /opt/openGauss/bin/gaussdb -D /opt/openGauss/data/single_node
 ```
 ![images](./images/opengauss_ps.png)
 
 ```shell
-# Database status-ын тексеру
-$ gs_ctl query -D /opt/openGauss/data/single_node
+omm@openGauss~$ gs_ctl query -D /opt/openGauss/data/single_node
 Normal
 ```
 ![images](./images/opengauss_gs_ctl.png)
 
 ```shell
-$ gsql -d sgnode -U omm -W "Huawei@123" -p 5432
+omm@openGauss~$ gsql -d sgnode -U omm -W "Huawei@123" -p 5432
 ```
 `\l` – дерекқорлардың тізімін көру  
 `\c school` – school дерекқорына қосылу  
@@ -112,9 +110,9 @@ $ gsql -d sgnode -U omm -W "Huawei@123" -p 5432
 ```shell
 # Error SEMMNI
 
-$ sysctl -w kernel.sem="250 85000 250 330"
+student@openGauss~$ sysctl -w kernel.sem="250 85000 250 330"
 немесе
-$ sudo vi /etc/sysctl.conf
+student@openGauss~$ sudo vi /etc/sysctl.conf
 kernel.sem="250 85000 250 330"
 :wq
 ```
@@ -122,7 +120,7 @@ kernel.sem="250 85000 250 330"
 ```shell
 # import Demo Database
 
-[omm@openGauss ~]$ cd /opt/openGauss/simpleInstall
-[omm@openGauss ~]$ gsql -d sgnode -U omm -W "Huawei@123" -f school.sql
-[omm@openGauss ~]$ gsql -d sgnode -U omm -W "Huawei@123" -f finance.sql
+omm@openGauss~$ cd /opt/openGauss/simpleInstall
+omm@openGauss~$ gsql -d sgnode -U omm -W "Huawei@123" -f school.sql
+omm@openGauss~$ gsql -d sgnode -U omm -W "Huawei@123" -f finance.sql
 ```
