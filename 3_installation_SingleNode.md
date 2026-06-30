@@ -97,6 +97,8 @@ $ gs_ctl query -D /opt/openGauss/data/single_node          // Database status-ы
 Нәтиже:
 local_role : Normal
 static_connections : 0
+db_state: Normal
+detail_information: Normal
 Senders info : No information
 Receiver info : No information
 ```
