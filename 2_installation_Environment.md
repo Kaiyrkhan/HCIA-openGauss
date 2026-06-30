@@ -95,6 +95,9 @@ SELINUX=disabled
 :wq
 
 student@openGauss~$ sudo reboot
+
+student@openGauss~$ sestatus
+SELinux status: disabled
 ```
 
 ```shell
