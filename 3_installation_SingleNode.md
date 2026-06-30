@@ -45,8 +45,11 @@ drwxr-xr-x  root root   simpleInstall
 -rw-r--r--  root root   version.cfg
 ```
 
+install openGauss
 ```shell
+$ sh install.sh -w "xxxx" && source ~/.bashrc
 ```
+`-w` — мәліметтер қорына құпиясөз орнату   
 
 ```shell
 ```
