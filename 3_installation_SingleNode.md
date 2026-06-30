@@ -54,7 +54,16 @@ $ source ~/.bashrc
 `-w` – мәліметтер қорына құпиясөз орнату  
 `source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
 
+> Database Name: sgnode  
+> Database Directory: /opt/openGauss/data/single_node  
+
+error SEMMNI
 ```shell
+$ sysctl -w kernel.sem="250 85000 250 330"
+
+$ sudo vi /etc/sysctl.conf
+kernel.sem="250 85000 250 330"
+:wq
 ```
 
 ```shell
