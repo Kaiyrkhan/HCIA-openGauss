@@ -16,8 +16,11 @@ drwxr-xr-x  omm dbgroup openGauss
 Decompress
 ```shell
 $ sudo dnf install tar
-$ tar -xf openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2 -C /opt/openGauss
+$ sudo tar -xf openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2 -C /opt/openGauss
+
+$ ls -l /opt/openGauss/
 ```
+![images](./images/img.png)
 
 ```shell
 ```
