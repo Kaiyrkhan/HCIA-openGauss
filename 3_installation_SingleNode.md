@@ -58,7 +58,10 @@ password: 123
 $ cd /opt/openGauss/simpleInstall
 $ sh install.sh -w "Huawei@123"
 Would you like to create a demo database (yes/no)? yes
+```
+`-w` – мәліметтер қорына құпиясөз орнату  
 
+```shell
 $ source ~/.bashrc
 -bash: ulimit: open files: cannot modify limit: Operation not permitted
 
@@ -68,20 +71,10 @@ $ vi .bashrc
 
 $ source ~/.bashrc
 ```
-`-w` – мәліметтер қорына құпиясөз орнату  
 `source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
 
 > Database Name: sgnode  
 > Database Directory: /opt/openGauss/data/single_node  
-
-*Егер, скрипт файлды орындағаннан кейін **"the maximum number of SEMMNI is not correct..."** деген қате шықса, төмендегі командаларды орындаңыз!*  
-```shell
-$ sudo sysctl -w kernel.sem="250 85000 250 330"
-
-$ sudo vi /etc/sysctl.conf
-kernel.sem="250 85000 250 330"
-:wq
-```
 
 Verification
 ```shell
