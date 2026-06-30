@@ -26,7 +26,6 @@ $ sudo mkdir /opt/openGauss
 
 Decompress
 ```shell
-$ sudo dnf install tar
 $ sudo tar -xf openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2 -C /opt/openGauss
 
 $ ls -l /opt/openGauss/
