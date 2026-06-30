@@ -1,5 +1,15 @@
 # Server-based installation on a Single Node
 
+| item                  | value                           |
+|-----------------------|---------------------------------|
+| Operating System      | openEuler 22.03 LTS x86_64      |
+| Hostname              | openGauss                       |
+| Linux Database User   | omm                             |
+| Linux Database Group  | dbgroup                         |
+| openGauss Port Number | 5432/TCP                        |
+| install Path          | /opt/openGauss                  |
+| Data Path             | /opt/openGauss/data/single_node |
+
 **Configure openGauss User and Group**
 ```shell
 student@openGauss~$ sudo groupadd dbgroup
