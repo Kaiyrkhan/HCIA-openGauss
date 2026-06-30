@@ -19,6 +19,12 @@ Shift+} -> Edit mode -> Enter
 Normal mode -> :wq
 ```
 
+```shell
+student@openGauss~$ ping -c2 openGauss
+64 bytes from openGauss (192.168.0.103): icmp_seq=1 ttl=64 time=0.035 ms
+64 bytes from openGauss (192.168.0.103): icmp_seq=2 ttl=64 time=0.101 ms
+```
+
 **Configure openGauss User and Group**
 ```shell
 student@openGauss~$ sudo groupadd dbgroup
