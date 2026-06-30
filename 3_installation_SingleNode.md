@@ -68,10 +68,20 @@ kernel.sem="250 85000 250 330"
 
 Verification
 ```shell
-ps ux | grep gaussdb
+$ ps ux | grep gaussdb          // Database process-нің іске қосылғанын тексеру
+
+Нәтиже:
+
 ```
 
 ```shell
+$ sudo gs_ctl query -D /opt/openGauss/data/single_node          // Database status-ын тексеру
+
+Нәтиже:
+local_role : Normal
+static_connections : 0
+Senders info : No information
+Receiver info : No information
 ```
 
 ```shell
