@@ -96,6 +96,13 @@ Senders info : No information
 Receiver info : No information
 ```
 
+import Demo Database
+```shell
+[omm@openGauss ~]$ cd /opt/openGauss/simpleInstall
+[omm@openGauss ~]$ gsql -d sgnode -U omm -W "Huawei@123" -f school.sql
+[omm@openGauss ~]$ gsql -d sgnode -U omm -W "Huawei@123" -f finance.sql
+```
+
 ```shell
 $ gsql -d sgnode -U omm -W "Huawei@123" -p 5432
 ```
