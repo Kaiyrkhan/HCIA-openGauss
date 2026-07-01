@@ -77,7 +77,7 @@ Table - **Software Dependency Requirements**
 student@openGauss~$ sudo dnf clean all
 student@openGauss~$ sudo dnf makecache
 
-student@openGauss~$ sudo  dnf update
+student@openGauss~$ sudo dnf update
 ```
 
 ```shell
