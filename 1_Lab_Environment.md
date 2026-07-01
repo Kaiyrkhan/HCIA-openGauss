@@ -23,3 +23,15 @@
 ![images](./images/openEuler_settings_menu.png)  
 ![images](./images/openEuler_install_complete.png)  
 ![images](./images/vmware_vm_devices.png)  
+
+login: student  
+password: P@s$w0rd  
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
