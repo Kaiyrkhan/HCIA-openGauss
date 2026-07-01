@@ -1,6 +1,6 @@
 # Lab Environment
 
-**Download Link:** https://drive.google.com/drive/folders/1xPeOKfdeOzGdEHJRhYktJThgL6-xjkHy?usp=sharing    
+**Download VMware Desktop Hypervisor** https://drive.google.com/drive/folders/1xPeOKfdeOzGdEHJRhYktJThgL6-xjkHy?usp=sharing  
 
 ![images](./images/vmware_custom.png)  
 ![images](./images/vmware_blank.png)  
