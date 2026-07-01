@@ -123,6 +123,7 @@ Normal
 
 ```shell
 omm@openGauss~$ gsql -d postgres
+omm@openGauss~$ gsql -d postgres -r
 SELECT version();
 \q
 ```
