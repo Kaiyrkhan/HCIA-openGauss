@@ -85,7 +85,7 @@ omm@openGauss~$
 
 omm@openGauss~$ cd /opt/openGauss/simpleInstall
 
-omm@openGauss~$ sh install.sh -w "Huawei@123"
+omm@openGauss~$ sh install.sh -w "openGauss@123"
 Would you like to create a demo database (yes/no)? yes
 ```
 `-w` – мәліметтер қорына құпиясөз орнату  
@@ -136,10 +136,10 @@ SELECT version();
 `\q` – шығу  
 
 > Local Connection  
-> gsql -d postgres -U omm -W "Huawei@123" -p 5432  
+> gsql -d postgres -U omm -W "openGauss@123" -p 5432  
 
 > Remote Connection  
-> gsql -h 192.168.0.103 -d postgres -U omm -W "Huawei@123" -p 5432  
+> gsql -h 192.168.0.103 -d postgres -U omm -W "openGauss@123" -p 5432  
 
 **Қосымша ақпарат!**
 
@@ -163,8 +163,8 @@ kernel.sem="250 85000 250 330"
 # import Demo Database
 
 omm@openGauss~$ cd /opt/openGauss/simpleInstall
-omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f school.sql
-omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f finance.sql
+omm@openGauss~$ gsql -d postgres -U omm -W "openGauss@123" -f school.sql
+omm@openGauss~$ gsql -d postgres -U omm -W "openGauss@123" -f finance.sql
 ```
 
 ```shell
@@ -212,9 +212,9 @@ omm@openGauss~$ grep "trust" /opt/openGauss/data/single_node/pg_hba.conf
 omm@openGauss~$ gs_ctl reload -D /opt/openGauss/data/single_node
 omm@openGauss~$ gs_ctl query -D /opt/openGauss/data/single_node
 
-omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123"
-omm@openGauss~$ gsql -d school -U omm -W "Huawei@123"
-omm@openGauss~$ gsql -d finance -U omm -W "Huawei@123"
+omm@openGauss~$ gsql -d postgres -U omm -W "openGauss@123"
+omm@openGauss~$ gsql -d school -U omm -W "openGauss@123"
+omm@openGauss~$ gsql -d finance -U omm -W "openGauss@123"
 ```
 
 ```shell
