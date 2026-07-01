@@ -24,8 +24,20 @@
 ![images](./images/openEuler_install_complete.png)  
 ![images](./images/vmware_vm_devices.png)  
 
-login: student  
-password: P@s$w0rd  
+login: **student**  
+password: **123**  
+
+```shell
+student@openGauss~$ sudo passwd student
+New password: 123
+
+student@openGauss~$ sudo passwd root
+New password: P@s$w0rd
+```
+
+```shell
+student@openGauss~$ ping google.com -c2
+```
 
 ```shell
 ```
