@@ -248,8 +248,31 @@ INSERT INTO students VALUES
 SELECT * FROM students;
 
 \q
+
+omm@openGauss~$ gsql -d db1 -U user1 -W "User@123"
 ```
 
 ```shell
-omm@openGauss~$ gsql -d db1 -U user1 -W "User@123"
+# Auto Restart
+# Create systemd Service
+
+student@openGauss~$ sudo vi /etc/systemd/system/opengauss.service
+
+[Unit]
+Description=openGauss Single Node Database
+After=network.target
+
+[Service]
+Type=forking
+User=omm
+Group=dbgroup
+ExecStart=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl start -D /opt/openGauss/data/single_node'
+ExecStop=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl stop -D /opt/openGauss/data/single_node -m fast'
+ExecReload=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl restart -D /openGauss/data/single_node'
+TimeoutSec=300
+
+[Install]
+WantedBy=multi-user.target
+
+:wq
 ```
