@@ -122,14 +122,18 @@ Normal
 **Connecting to openGauss**
 
 ```shell
-omm@openGauss~$ gsql -d sgnode -U omm -W "Huawei@123" -p 5432
+omm@openGauss~$ gsql -d postgres
+SELECT version();
+\q
 ```
 `\l` – дерекқорлардың тізімін көру  
 `\c school` – school дерекқорына қосылу  
 `\c finance` – finance дерекқорына қосылу  
 `\dt` – кестелерді көрсету  
-  
-  
+`\q` – шығу  
+
+> gsql -d postgres -U omm -W "Huawei@123" -p 5432  
+
 **Қосымша ақпарат!**
 
 ```shell
