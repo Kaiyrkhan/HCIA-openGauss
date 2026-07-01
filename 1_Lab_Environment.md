@@ -2,6 +2,8 @@
 
 **Download VMware Desktop Hypervisor** https://drive.google.com/drive/folders/1xPeOKfdeOzGdEHJRhYktJThgL6-xjkHy?usp=sharing  
 
+**Download openEuler 22.03 LTS SP4** https://www.openeuler.org/en/download/?archive=true  
+
 ![images](./images/vmware_custom.png)  
 ![images](./images/vmware_blank.png)  
 ![images](./images/vmware_guest_os.png)  
