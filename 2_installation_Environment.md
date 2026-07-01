@@ -103,13 +103,15 @@ SELinux status: disabled
 ```
 
 ```shell
-systemctl disable --now firewalld
-systemctl status firewalld --no-pager
+student@openGauss~$ sudo systemctl disable --now firewalld
+student@openGauss~$ sudo systemctl status firewalld
 ```
+
+немесе
 
 ```shell
 # Disable the firewall service
-student@openGauss~$ systemctl disable firewalld
+student@openGauss~$ sudo systemctl disable firewalld
 student@openGauss~$ sudo systemctl is-enabled firewalld
 
 # Stop the firewall service
