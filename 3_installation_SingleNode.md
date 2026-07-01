@@ -132,7 +132,11 @@ SELECT version();
 `\dt` – кестелерді көрсету  
 `\q` – шығу  
 
+> Local Connection  
 > gsql -d postgres -U omm -W "Huawei@123" -p 5432  
+
+> Remote Connection  
+> gsql -h 192.168.0.103 -d postgres -U omm -W "Huawei@123" -p 5432  
 
 **Қосымша ақпарат!**
 
@@ -152,4 +156,40 @@ kernel.sem="250 85000 250 330"
 omm@openGauss~$ cd /opt/openGauss/simpleInstall
 omm@openGauss~$ gsql -d sgnode -U omm -W "Huawei@123" -f school.sql
 omm@openGauss~$ gsql -d sgnode -U omm -W "Huawei@123" -f finance.sql
+```
+
+```shell
+# Configure Firewalld
+
+student@openGauss~$ sudo systemctl enable --now firewalld
+student@openGauss~$ sudo firewall-cmd --permanent --add-port=5432/tcp
+student@openGauss~$ sudo firewall-cmd --reload
+
+$ ss -tulpn | grep 5432
+$ netstat -tulpn | grep 5432
+```
+
+```shell
+# openGauss start / stop / restart / reload
+
+Status
+gs_ctl query -D /opt/openGauss/data/single_node
+
+Stop
+gs_ctl stop -D /opt/openGauss/data/single_node -m fast
+
+Start
+gs_ctl start -D /opt/openGauss/data/single_node
+
+Restart
+gs_ctl restart -D /opt/openGauss/data/single_node
+
+Reload
+gs_ctl reload -D /opt/openGauss/data/single_node
+```
+
+```shell
+```
+
+```shell
 ```
