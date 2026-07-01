@@ -127,6 +127,8 @@ omm@openGauss~$ gsql -d postgres -r
 SELECT version();
 \q
 ```
+`\copyright` – openGauss version  
+`h` – help    
 `\l` – дерекқорлардың тізімін көру  
 `\c school` – school дерекқорына қосылу  
 `\c finance` – finance дерекқорына қосылу  
