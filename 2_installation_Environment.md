@@ -105,6 +105,17 @@ SELinux status: disabled
 
 Firewalld
 ```shell
+student@openGauss~$ sudo systemctl status firewalld
+student@openGauss~$ sudo systemctl is-enabled firewalld
+
+student@openGauss~$ sudo firewall-cmd --zone=public --add-port=5432/tcp --permanent
+student@openGauss~$ sudo firewall-cmd --reload
+student@openGauss~$ sudo firewall-cmd --list-ports
+```
+
+немесе
+
+```shell
 student@openGauss~$ sudo systemctl disable --now firewalld
 student@openGauss~$ sudo systemctl status firewalld
 ```
