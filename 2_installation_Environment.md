@@ -74,8 +74,10 @@ Table - **Software Dependency Requirements**
 | expect         | -                   |
 
 ```shell
-student@openGauss~$ dnf clean all
-student@openGauss~$ dnf makecache
+student@openGauss~$ sudo dnf clean all
+student@openGauss~$ sudo dnf makecache
+
+student@openGauss~$ sudo  dnf update
 ```
 
 ```shell
