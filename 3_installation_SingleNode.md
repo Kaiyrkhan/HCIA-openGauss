@@ -189,7 +189,52 @@ gs_ctl reload -D /opt/openGauss/data/single_node
 ```
 
 ```shell
+# Trust and sha256
+
+omm@openGauss~$ vi /opt/openGauss/data/single_node/pg_hba.conf
+
+TYPE    DATABASE    USER    ADDRESS        METHOD
+local   all         all                    sha256
+host    all         all     127.0.0.1/32   sha256
+host    all         all     ::1/128        sha256
+
+omm@openGauss~$ grep "trust" /opt/openGauss/data/single_node/pg_hba.conf
+
+omm@openGauss~$ gs_ctl reload -D /opt/openGauss/data/single_node
+omm@openGauss~$ gs_ctl query -D /opt/openGauss/data/single_node
+
+omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123"
+omm@openGauss~$ gsql -d school -U omm -W "Huawei@123"
+omm@openGauss~$ gsql -d finance -U omm -W "Huawei@123"
 ```
 
 ```shell
+# Reboot and Shutdown
+
+student@openGauss~$ sudo visudo
+omm ALL=(ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown
+:wq
+
+omm@openGauss~$ sudo reboot
+omm@openGauss~$ sudo shutdown -h now
+```
+
+```shell
+# SQL Commands
+
+CREATE USER user1 IDENTIFIED BY 'user1@123';
+CREATE DATABASE db1 OWNER user1;
+
+\c db1
+
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50)
+);
+
+INSERT INTO students VALUES (1, 'Berik'), (2, 'Marat');
+
+SELECT * FROM students;
+
+\q
 ```
