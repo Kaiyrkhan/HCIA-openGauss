@@ -142,6 +142,12 @@ SELECT version();
 **Қосымша ақпарат!**
 
 ```shell
+# Құпиясөзді өзгерту
+
+ALTER ROLE omm IDENTIFIED BY 'new_password' REPLACE 'old_password';
+```
+
+```shell
 # Error SEMMNI
 
 student@openGauss~$ sysctl -w kernel.sem="250 85000 250 330"
@@ -155,8 +161,8 @@ kernel.sem="250 85000 250 330"
 # import Demo Database
 
 omm@openGauss~$ cd /opt/openGauss/simpleInstall
-omm@openGauss~$ gsql -d sgnode -U omm -W "Huawei@123" -f school.sql
-omm@openGauss~$ gsql -d sgnode -U omm -W "Huawei@123" -f finance.sql
+omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f school.sql
+omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f finance.sql
 ```
 
 ```shell
@@ -223,7 +229,7 @@ omm@openGauss~$ sudo shutdown -h now
 ```shell
 # SQL Commands
 
-CREATE USER user1 IDENTIFIED BY 'user1@123';
+CREATE USER user1 IDENTIFIED BY 'User@123';
 CREATE DATABASE db1 OWNER user1;
 
 \c db1
@@ -240,4 +246,8 @@ INSERT INTO students VALUES
 SELECT * FROM students;
 
 \q
+```
+
+```shell
+omm@openGauss~$ gsql -d db1 -U user1 -W "User@123"
 ```
