@@ -91,6 +91,7 @@ student@openGauss~$ rpm -q libaio-devel readline-devel expect
 
 ### Step4 - Disabling SELinux and firewalld
 
+SELinux
 ```shell
 student@openGauss~$ sudo vi /etc/selinux/config
 SELINUX=disabled
@@ -102,6 +103,7 @@ student@openGauss~$ sestatus
 SELinux status: disabled
 ```
 
+Firewalld
 ```shell
 student@openGauss~$ sudo systemctl disable --now firewalld
 student@openGauss~$ sudo systemctl status firewalld
