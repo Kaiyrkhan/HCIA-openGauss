@@ -2,9 +2,9 @@
 
 ### Step1 - Obtaining installation Package
 
-**openGauss Download Link:** https://opengauss.org/en/download/  
+**Download openGauss:** https://opengauss.org/en/download/  
 
-**WinSCP Download Link**: https://winscp.net/eng/download.php  
+**Download WinSCP**: https://winscp.net/eng/download.php  
 
 ![images](./images/winscp_sftp.png)  
 ![images](./images/winscp_upload.png)  
