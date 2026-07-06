@@ -8,6 +8,7 @@
 
 ```shell
 student@openGauss~$ ip address
+192.168.0.103
 ```
 
 ![images](./images/winscp_sftp.png)  
