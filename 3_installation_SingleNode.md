@@ -47,12 +47,12 @@ student@openGauss~$ ss -tulpn | grep 5432
 student@openGauss~$ netstat -tulpn | grep 5432
 ```
 
-WinSCP Download Link: https://winscp.net/eng/download.php  
-
-![images](./images/winscp_sftp.png)  
-![images](./images/winscp_upload.png)  
-
 **DeCompress**
+```shell
+student@openGauss~$ ls -lh
+openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
+```
+
 ```shell
 student@openGauss~$ sudo mkdir /opt/openGauss
 
