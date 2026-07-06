@@ -285,22 +285,6 @@ student@openGauss~$ sudo systemctl start opengauss
 student@openGauss~$ sudo systemctl status opengauss --no-pager
 ```
 
-**Configure Console Login Banner**
-```shell
-student@openGauss~$ sudo vi /etc/issue
-\S \l
-Kernel \r
-
-******************************************
-Username: omm
-Password: 123
-******************************************
-ENTER
-ENTER
-
-:wq
-```
-
 **Clear Bash History**
 ```shell
 student@openGauss~$ history
