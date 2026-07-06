@@ -6,11 +6,6 @@
 
 **Download WinSCP**: https://winscp.net/eng/download.php  
 
-```shell
-student@openGauss~$ ip address
-192.168.0.103
-```
-
 ![images](./images/winscp_sftp.png)  
 ![images](./images/winscp_upload.png)  
 
