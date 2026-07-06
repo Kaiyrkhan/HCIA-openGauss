@@ -35,9 +35,10 @@ Table - **System Requirements**
 ![images](./images/openEuler_begin_installation.png)  
 ![images](./images/openEuler_install_complete.png)  
 
+**Shut Down Guest**  
 ![images](./images/vmware_shutdown_vm.png)  
 
-Hardware Device (CPU, RAM, Storage, NIC, Display)  
+**Hardware Device (RAM, CPU, Storage, NIC, Display)**  
 ![images](./images/openEuler_hardware_devices.png)  
 
 login: **student**  
