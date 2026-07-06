@@ -4,6 +4,13 @@
 
 **Download openEuler 22.03 LTS SP4** https://www.openeuler.org/en/download/?archive=true  
 
+Table - **System Requirements**
+| Component | Minimum Requirement |
+|-----------|---------------------|
+| Memory    | 4 GB                |
+| Processor | 2 cores             |
+| Storage   | 20 GB               |
+
 ![images](./images/vmware_vm_config_type_custom.png)  
 ![images](./images/vmware_create_blank_hard_disk.png)  
 ![images](./images/vmware_guest_os_opengauss.png)  
