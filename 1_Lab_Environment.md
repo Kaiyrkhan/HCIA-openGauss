@@ -30,7 +30,7 @@
 
 ![images](./images/vmware_shutdown_vm.png)  
 
-Hardware Device (CPU, RAM, Storage, NIC, Display)
+Hardware Device (CPU, RAM, Storage, NIC, Display)  
 ![images](./images/openEuler_hardware_devices.png)  
 
 login: **student**  
