@@ -71,3 +71,19 @@ student@openGauss~$ sudo systemctl status sshd
 
 student@openGauss~$ ip address
 ```
+
+Configure Console Login Banner
+```shell
+student@openGauss~$ sudo vi /etc/issue
+\S \l
+Kernel \r
+
+******************************************
+Username: omm
+Password: 123
+******************************************
+ENTER
+ENTER
+
+:wq
+```
