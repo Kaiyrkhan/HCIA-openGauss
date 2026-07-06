@@ -13,12 +13,12 @@ student@openGauss~$ sha256sum openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.b
 ### Step2 - Hardware and Software Requirements
 
 Table - **Hardware Requirements**
-| Item    | Minimum Requirement |
-|---------|---------------------|
-| CPU     | 2 cores             |
-| Memory  | 4 GB                |
-| Storage | 20 GB               |
-| Network | 300 Mbit/s Ethernet |
+| Item            | Minimum Requirement |
+|-----------------|---------------------|
+| Memory          | 4 GB                |
+| Processor       | 2 cores             |
+| Storage         | 20 GB               |
+| Network Adapter | 300 Mbit/s Ethernet |
 
 ```shell
 $ lscpu
