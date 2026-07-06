@@ -27,6 +27,7 @@
 ![images](./images/openEuler_create_user.png)  
 ![images](./images/openEuler_begin_installation.png)  
 ![images](./images/openEuler_install_complete.png)  
+![images](./images/vmware_shutdown_vm.png) 
 ![images](./images/openEuler_hardware_devices.png)  
 
 login: **student**  
