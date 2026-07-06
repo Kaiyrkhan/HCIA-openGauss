@@ -4,11 +4,12 @@
 
 **Download Link:** https://opengauss.org/en/download/  
 
+![images](./images/winscp_sftp.png)  
+![images](./images/winscp_upload.png)  
+
 ```shell
 student@openGauss~$ ls -lh
 openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
-
-student@openGauss~$ sha256sum openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
 ```
 ### Step2 - Hardware and Software Requirements
 
