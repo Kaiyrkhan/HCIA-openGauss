@@ -6,6 +6,10 @@
 
 **Download WinSCP**: https://winscp.net/eng/download.php  
 
+```shell
+student@openGauss~$ ip address
+```
+
 ![images](./images/winscp_sftp.png)  
 ![images](./images/winscp_upload.png)  
 
