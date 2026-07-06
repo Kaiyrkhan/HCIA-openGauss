@@ -96,3 +96,17 @@ student@openGauss~$ ls -la
 student@openGauss~$ cat /dev/null > ~/.bash_history
 student@openGauss~$ history -c
 ```
+
+VMware Workstation -> Description
+```shell
+Username: student
+Password: 123
+
+Username: root
+Password: P@s$w0rd
+```
+
+Take Snapshot
+```shell
+Snapshot Manager -> Take Snapshot -> Name: initial image
+```
