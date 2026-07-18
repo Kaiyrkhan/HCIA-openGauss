@@ -206,14 +206,14 @@ gs_ctl reload -D $GAUSSHOME/data/single_node
 # pg_hba.conf файлдың ішіндегі "trust" мәнін "sha256" мәніне өзгертсек database-ге кірген кезде құпиясөзді сұрайтын болады!
 # Негізінде бұл конфигурация міндетті емес!
 
-omm@openGauss~$ cat $GAUSSHOME/data/single_node/pg_hba.conf
+omm@openGauss~$ cat /opt/openGauss/data/single_node/pg_hba.conf
 
 TYPE    DATABASE    USER    ADDRESS        METHOD
 local   all         all                    trust
 host    all         all     127.0.0.1/32   trust
 host    all         all     ::1/128        trust
 
-omm@openGauss~$ vi $GAUSSHOME/data/single_node/pg_hba.conf
+omm@openGauss~$ vi /opt/openGauss/data/single_node/pg_hba.conf
 
 TYPE    DATABASE    USER    ADDRESS        METHOD
 local   all         all                    sha256
