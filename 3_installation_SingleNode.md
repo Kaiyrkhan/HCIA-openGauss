@@ -141,7 +141,7 @@ SELECT version();
 > gsql -d postgres -U omm -W "openGauss@123" -p 5432 -r  
 
 > Remote Connection  
-> gsql -h 192.168.0.103 -d postgres -U omm -W "openGauss@123" -p 5432 -r  
+> gsql -h 192.168.0.103 -d postgres -U omm -p 5432 -r  
 
 **Қосымша ақпарат!**
 
