@@ -271,6 +271,7 @@ omm ALL=(ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/poweroff
 
 omm@openGauss~$ sudo reboot
 omm@openGauss~$ sudo shutdown -h now
+omm@openGauss~$ sudo poweroff
 ```
 
 ```shell
