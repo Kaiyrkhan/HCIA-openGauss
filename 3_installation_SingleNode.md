@@ -247,7 +247,7 @@ omm@openGauss~$ gsql -d finance -p 5432 -r
 ```
 
 ```shell
-# "NOTICE: The password has been expired, please change the password." - мынандай хабарлама шықпас үшін төмендегі конфигурацияны жасау керек!
+# "NOTICE: The password has been expired, please change the password" - мұндай хабарлама шықпау үшін, төмендегі конфигурацияны жасау керек!
 
 omm@openGauss~$ gs_guc reload -D $GAUSSHOME/data/single_node -c "password_effect_time = 0"
 omm@openGauss~$ gs_guc reload -D $GAUSSHOME/data/single_node -c "password_notify_time = 0"
