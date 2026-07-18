@@ -85,7 +85,7 @@ student@openGauss~$ sudo dnf update
 
 ```shell
 # install the dependency packages
-student@openGauss~$ sudo dnf install -y libaio-devel readline-devel expect glibc-langpack-en net-tools tar
+student@openGauss~$ sudo dnf install -y libaio-devel readline-devel expect glibc-langpack-en net-tools tar vim-enhanced
 ```
 
 ```shell
