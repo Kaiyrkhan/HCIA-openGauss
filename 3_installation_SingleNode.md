@@ -183,7 +183,8 @@ omm@openGauss~$ echo $GAUSSHOME
 ```
 
 ```shell
-# openGauss status | start | stop | restart | reload
+# openGauss Database
+# status | start | stop | restart | reload
 
 Status
 gs_ctl query -D $GAUSSHOME/data/single_node
