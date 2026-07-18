@@ -280,7 +280,10 @@ openGauss=# CREATE USER user1 IDENTIFIED BY 'Huawei@123';
 openGauss=# CREATE DATABASE db1 OWNER user1;
 
 openGauss=# \l
-openGauss=# \q
+
+openGauss=# \c db1
+db1=# GRANT USAGE, CREATE ON SCHEMA public TO user1;
+db1=# \q
 
 omm@openGauss~$ gsql -d db1 -U user1 -p 5432 -r
 
