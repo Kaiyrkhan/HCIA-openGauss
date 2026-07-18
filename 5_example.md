@@ -1,4 +1,6 @@
-# Example
+# SQL (Structured Query Language)
+
+## Example #1
 
 ```shell
 CREATE TABLE student (
