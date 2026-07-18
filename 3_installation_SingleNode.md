@@ -8,7 +8,7 @@
 | Linux Group                 | dbgroup                         |
 | openGauss Port              | 5432/TCP                        |
 | installation Path           | /opt/openGauss                  |
-| Data Path                   | /opt/openGauss/data/single_node |
+| Data Directory              | /opt/openGauss/data/single_node |
 | openGauss Database User     | omm                             |
 | openGauss Database Password | Huawei@123                      |
 
@@ -274,25 +274,56 @@ omm@openGauss~$ sudo shutdown -h now
 ```shell
 # SQL Commands
 
-CREATE USER user1 IDENTIFIED BY 'User@123';
-CREATE DATABASE db1 OWNER user1;
+omm@openGauss~$ gsql -d postgres -p 5432 -r
 
-\c db1
+openGauss=# CREATE USER user1 IDENTIFIED BY 'Huawei@123';
+openGauss=# CREATE DATABASE db1 OWNER user1;
+openGauss=# \l
+openGauss=# \q
 
-CREATE TABLE students (
-    id INT,
-    name VARCHAR(50)
+omm@openGauss~$ gsql -d db1 -U user1 -p 5432 -r
+
+db1=>
+
+CREATE TABLE student (
+    student_id INT,
+    student_name VARCHAR(50),
+    student_age DATE,
+    student_gender VARCHAR(50)
 );
 
-INSERT INTO students VALUES
-(1, 'Berik'),
-(2, 'Marat');
+db1=> \dt
 
-SELECT * FROM students;
+INSERT INTO student (student_id, student_name, student_age, student_gender) VALUES
+(1001, 'John', '2012-01-15', 'Male'),
+(1002, 'Mary', '2013-03-22', 'Female'),
+(1003, 'Michael', '2014-12-30', 'Male'),
+(1004, 'Linda', '2010-07-25', 'Female'),
+(1005, 'David', '2009-06-10', 'Male'),
+(1006, 'Susan', '2014-11-12', 'Female'),
+(1007, 'James', '2012-04-04', 'Male'),
+(1008, 'Patricia', '2011-09-08', 'Female'),
+(1009, 'Robert', '2014-02-11', 'Male'),
+(1010, 'Jennifer', '2008-10-01', 'Female');
+
+SELECT * FROM student;
+
+ student_id | student_name |     student_age     | student_gender
+------------+--------------+---------------------+----------------
+       1001 | John         | 2012-01-15 00:00:00 | Male
+       1002 | Mary         | 2013-03-22 00:00:00 | Female
+       1003 | Michael      | 2014-12-30 00:00:00 | Male
+       1004 | Linda        | 2010-07-25 00:00:00 | Female
+       1005 | David        | 2009-06-10 00:00:00 | Male
+       1006 | Susan        | 2014-11-12 00:00:00 | Female
+       1007 | James        | 2012-04-04 00:00:00 | Male
+       1008 | Patricia     | 2011-09-08 00:00:00 | Female
+       1009 | Robert       | 2014-02-11 00:00:00 | Male
+       1010 | Jennifer     | 2008-10-01 00:00:00 | Female
 
 \q
 
-omm@openGauss~$ gsql -d db1 -U user1 -W "User@123"
+
 ```
 
 ```shell
