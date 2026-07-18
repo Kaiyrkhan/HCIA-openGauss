@@ -331,6 +331,9 @@ db1=> SELECT * FROM student;
 
 db1=> \q
 ```
+> GRANT USAGE, CREATE ON SCHEMA public TO user1;  
+> GRANT CREATE, USAGE, ALTER, DROP, COMMENT ON SCHEMA public TO user1;  
+> GRANT ALL PRIVILEGES ON SCHEMA public TO user1;  
 
 ```shell
 # Create systemd Service
