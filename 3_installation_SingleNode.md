@@ -278,13 +278,13 @@ omm@openGauss~$ gsql -d postgres -p 5432 -r
 
 openGauss=# CREATE USER user1 IDENTIFIED BY 'Huawei@123';
 openGauss=# CREATE DATABASE db1 OWNER user1;
+
 openGauss=# \l
 openGauss=# \q
 
 omm@openGauss~$ gsql -d db1 -U user1 -p 5432 -r
 
 db1=>
-
 CREATE TABLE student (
     student_id INT,
     student_name VARCHAR(50),
@@ -294,6 +294,11 @@ CREATE TABLE student (
 
 db1=> \dt
 
+ Schema |  Name   | Type  | Owner |             Storage
+--------+---------+-------+-------+----------------------------------
+ public | student | table | user1 | {orientation=row,compression=no}
+
+db1=>
 INSERT INTO student (student_id, student_name, student_age, student_gender) VALUES
 (1001, 'John', '2012-01-15', 'Male'),
 (1002, 'Mary', '2013-03-22', 'Female'),
@@ -306,7 +311,7 @@ INSERT INTO student (student_id, student_name, student_age, student_gender) VALU
 (1009, 'Robert', '2014-02-11', 'Male'),
 (1010, 'Jennifer', '2008-10-01', 'Female');
 
-SELECT * FROM student;
+db1=> SELECT * FROM student;
 
  student_id | student_name |     student_age     | student_gender
 ------------+--------------+---------------------+----------------
@@ -321,9 +326,7 @@ SELECT * FROM student;
        1009 | Robert       | 2014-02-11 00:00:00 | Male
        1010 | Jennifer     | 2008-10-01 00:00:00 | Female
 
-\q
-
-
+db1=> \q
 ```
 
 ```shell
