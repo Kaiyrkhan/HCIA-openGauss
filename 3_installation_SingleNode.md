@@ -122,8 +122,15 @@ Normal
 
 ```shell
 omm@openGauss~$ nano .bashrc
-echo -e '\n\n Run the following command to log in to the postgres database:
-    gsql -d postgres -p 5432 -r\n'
+echo -e "Run the following command to log in to the postgres database:"
+echo -e "  \033[1;32mgsql -d postgres -p 5432 -r\033[0m\n"
+
+echo -e "openGauss database user: \033[1;33momm\033[0m"
+echo -e "openGauss database password: \033[1;33mHuawei@123\033[0m\n"
+
+student@openGauss~$ sudo nano -l /etc/profile.d/system-info.sh
+84 else
+85     echo -e "\n"
 ```
 
 **Connecting to openGauss**
