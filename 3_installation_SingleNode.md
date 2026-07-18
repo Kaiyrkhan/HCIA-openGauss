@@ -219,7 +219,7 @@ gs_ctl reload -D /opt/openGauss/data/single_node
 ```
 
 ```shell
-# Trust and sha256
+# "sha256" мәнін "Trust" мәніне өзгертсек database-ге кірген кезде құпиясөзді сұрайтын болады (мысал, төменде көрсетілген), негізінде бұл конфигурация міндетті емес!
 
 omm@openGauss~$ vi /opt/openGauss/data/single_node/pg_hba.conf
 
