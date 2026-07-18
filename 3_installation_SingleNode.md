@@ -178,8 +178,30 @@ $ netstat -tulpn | grep 5432
 ```
 
 ```shell
+omm@openGauss~$ echo $GAUSSHOME
+/opt/openGauss
+```
+
+```shell
 # openGauss start / stop / restart / reload
 
+Status
+gs_ctl query -D $GAUSSHOME/data/single_node
+
+Stop
+gs_ctl stop -D $GAUSSHOME/data/single_node -m fast
+
+Start
+gs_ctl start -D $GAUSSHOME/data/single_node -Z single_node
+
+Restart
+gs_ctl restart -D $GAUSSHOME/data/single_node -Z single_node
+
+Reload
+gs_ctl reload -D $GAUSSHOME/data/single_node
+```
+
+```shell
 Status
 gs_ctl query -D /opt/openGauss/data/single_node
 
@@ -187,10 +209,10 @@ Stop
 gs_ctl stop -D /opt/openGauss/data/single_node -m fast
 
 Start
-gs_ctl start -D /opt/openGauss/data/single_node
+gs_ctl start -D /opt/openGauss/data/single_node -Z single_node
 
 Restart
-gs_ctl restart -D /opt/openGauss/data/single_node
+gs_ctl restart -D /opt/openGauss/data/single_node -Z single_node
 
 Reload
 gs_ctl reload -D /opt/openGauss/data/single_node
