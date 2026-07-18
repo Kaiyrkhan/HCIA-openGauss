@@ -1,6 +1,6 @@
 # SQL (Structured Query Language)
 
-**Download openEuler 22.03 LTS SP4** https://www.openeuler.org/en/download/?archive=true  
+**Download SQL File** https://github.com/Kaiyrkhan/HCIA-openGauss/blob/main/student.sql  
 
 ## Example #1
 
