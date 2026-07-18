@@ -118,6 +118,12 @@ Normal
 ```
 ![images](./images/opengauss_gsctl-query.png)
 
+```shell
+omm@openGauss~$ nano .bashrc
+echo -e '\n\n Run the following command to log in to the postgres database:
+    gsql -d postgres -p 5432 -r\n'
+```
+
 **Connecting to openGauss**
 
 ```shell
