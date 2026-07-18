@@ -202,37 +202,34 @@ gs_ctl reload -D $GAUSSHOME/data/single_node
 ```
 
 ```shell
-Status
-gs_ctl query -D /opt/openGauss/data/single_node
+# pg_hba.conf файлдың ішіндегі "trust" мәнін "sha256" мәніне өзгертсек database-ге кірген кезде құпиясөзді сұрайтын болады!
+# Негізінде бұл конфигурация міндетті емес!
 
-Stop
-gs_ctl stop -D /opt/openGauss/data/single_node -m fast
+omm@openGauss~$ cat $GAUSSHOME/data/single_node/pg_hba.conf
 
-Start
-gs_ctl start -D /opt/openGauss/data/single_node -Z single_node
+TYPE    DATABASE    USER    ADDRESS        METHOD
+local   all         all                    trust
+host    all         all     127.0.0.1/32   trust
+host    all         all     ::1/128        trust
 
-Restart
-gs_ctl restart -D /opt/openGauss/data/single_node -Z single_node
-
-Reload
-gs_ctl reload -D /opt/openGauss/data/single_node
-```
-
-```shell
-# "sha256" мәнін "Trust" мәніне өзгертсек database-ге кірген кезде құпиясөзді сұрайтын болады (мысал, төменде көрсетілген), негізінде бұл конфигурация міндетті емес!
-
-omm@openGauss~$ vi /opt/openGauss/data/single_node/pg_hba.conf
+omm@openGauss~$ vi $GAUSSHOME/data/single_node/pg_hba.conf
 
 TYPE    DATABASE    USER    ADDRESS        METHOD
 local   all         all                    sha256
 host    all         all     127.0.0.1/32   sha256
 host    all         all     ::1/128        sha256
 
-omm@openGauss~$ grep "trust" /opt/openGauss/data/single_node/pg_hba.conf
+:wq
 
-omm@openGauss~$ gs_ctl reload -D /opt/openGauss/data/single_node
-omm@openGauss~$ gs_ctl query -D /opt/openGauss/data/single_node
+omm@openGauss~$ gs_ctl reload -D $GAUSSHOME/data/single_node
+omm@openGauss~$ gs_ctl query -D $GAUSSHOME/data/single_node
+```
 
+```shell
+omm@openGauss~$ gsql -d postgres -p 5432 -r
+```
+
+```shell
 omm@openGauss~$ gsql -d postgres -U omm -W "openGauss@123"
 omm@openGauss~$ gsql -d school -U omm -W "openGauss@123"
 omm@openGauss~$ gsql -d finance -U omm -W "openGauss@123"
