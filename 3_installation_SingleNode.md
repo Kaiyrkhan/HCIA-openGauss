@@ -261,7 +261,7 @@ omm@openGauss~$ grep -n "password_notify_time" $GAUSSHOME/data/single_node/postg
 
 
 ```shell
-# Reboot and Shutdown
+# "omm" қолданушы жүйені "Reboot" немесе "Shutdown" жасай алу үшін, төмендегі конфигурацияны жасау керек!
 
 student@openGauss~$ sudo visudo
 omm ALL=(ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown
