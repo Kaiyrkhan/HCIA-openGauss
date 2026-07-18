@@ -4,12 +4,12 @@
 |-----------------------------|---------------------------------|
 | Operating System            | openEuler 22.03 LTS SP4 x86_64  |
 | Hostname                    | openGauss                       |
-| Linux Database User         | omm                             |
-| Linux Database Group        | dbgroup                         |
-| openGauss Port Number       | 5432/TCP                        |
-| install Path                | /opt/openGauss                  |
+| Linux User                  | omm                             |
+| Linux Group                 | dbgroup                         |
+| openGauss Port              | 5432/TCP                        |
+| installation Path           | /opt/openGauss                  |
 | Data Path                   | /opt/openGauss/data/single_node |
-| openGauss Database Username | omm                             |
+| openGauss Database User     | omm                             |
 | openGauss Database Password | Huawei@123                      |
 
 
