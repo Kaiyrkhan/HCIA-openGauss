@@ -232,28 +232,35 @@ local   all         all                    trust
 host    all         all     127.0.0.1/32   trust
 host    all         all     ::1/128        trust
 
-omm@openGauss~$ vi /opt/openGauss/data/single_node/pg_hba.conf
+omm@openGauss~$ nano /opt/openGauss/data/single_node/pg_hba.conf
 
 TYPE    DATABASE    USER    ADDRESS        METHOD
 local   all         all                    sha256
 host    all         all     127.0.0.1/32   sha256
 host    all         all     ::1/128        sha256
 
-:wq
-
 omm@openGauss~$ gs_ctl reload -D $GAUSSHOME/data/single_node
 omm@openGauss~$ gs_ctl query -D $GAUSSHOME/data/single_node
-```
 
-```shell
+# Нәтижені тексеру
 omm@openGauss~$ gsql -d postgres -p 5432 -r
+omm@openGauss~$ gsql -d school -p 5432 -r
+omm@openGauss~$ gsql -d finance -p 5432 -r
 ```
 
 ```shell
-omm@openGauss~$ gsql -d postgres -U omm -W "openGauss@123"
-omm@openGauss~$ gsql -d school -U omm -W "openGauss@123"
-omm@openGauss~$ gsql -d finance -U omm -W "openGauss@123"
+# "NOTICE: The password has been expired, please change the password." - мынандай хабарлама шықпас үшін төмендегі конфигурацияны жасау керек!
+
+omm@openGauss~$ gs_guc reload -D $GAUSSHOME/data/single_node -c "password_effect_time = 0"
+omm@openGauss~$ gs_guc reload -D $GAUSSHOME/data/single_node -c "password_notify_time = 0"
+
+# Нәтижені тексеру
+omm@openGauss~$ gsql -d postgres -p 5432 -r -c "SHOW password_effect_time;"
+omm@openGauss~$ gsql -d postgres -p 5432 -r -c "SHOW password_notify_time;"
+omm@openGauss~$ grep -n "password_effect_time" $GAUSSHOME/data/single_node/postgresql.conf
+omm@openGauss~$ grep -n "password_notify_time" $GAUSSHOME/data/single_node/postgresql.conf
 ```
+
 
 ```shell
 # Reboot and Shutdown
