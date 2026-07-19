@@ -353,9 +353,9 @@ omm@openGauss~$ gsql -d db1 -U user1 -p 5432 -r
 db1=>
 CREATE TABLE student (
     student_id INT,
-    student_name VARCHAR(50),
-    student_age DATE,
-    student_gender VARCHAR(50)
+    student_name VARCHAR(30),
+    student_birth DATE,
+    student_gender VARCHAR(6)
 );
 
 db1=> \dt
@@ -365,7 +365,7 @@ db1=> \dt
  public | student | table | user1 | {orientation=row,compression=no}
 
 db1=>
-INSERT INTO student (student_id, student_name, student_age, student_gender) VALUES
+INSERT INTO student (student_id, student_name, student_birth, student_gender) VALUES
 (1001, 'John', '2012-01-15', 'Male'),
 (1002, 'Mary', '2013-03-22', 'Female'),
 (1003, 'Michael', '2014-12-30', 'Male'),
@@ -379,7 +379,7 @@ INSERT INTO student (student_id, student_name, student_age, student_gender) VALU
 
 db1=> SELECT * FROM student;
 
- student_id | student_name |     student_age     | student_gender
+ student_id | student_name |     student_birth     | student_gender
 ------------+--------------+---------------------+----------------
        1001 | John         | 2012-01-15 00:00:00 | Male
        1002 | Mary         | 2013-03-22 00:00:00 | Female
@@ -452,10 +452,10 @@ openGauss=# GRANT CREATE ON TABLESPACE tablespace1 TO user1;
 
 CREATE TABLE student (
     student_id INT,
-    student_name VARCHAR(50),
-    student_age DATE,
-    student_gender VARCHAR(50)
-) tablespace tablespace1;
+    student_name VARCHAR(30),
+    student_birth DATE,
+    student_gender VARCHAR(6)
+) TABLESPACE tablespace1;
 ```
 
 ```shell
@@ -463,10 +463,54 @@ CREATE TABLE student (
 
 SET default_tablespace = tablespace1;
 
-CREATE TABLE student (
-    student_id INT,
-    student_name VARCHAR(50),
-    student_age DATE,
-    student_gender VARCHAR(50)
+CREATE TABLE teacher (
+    teacher_id INT,
+    teacher_name VARCHAR(30),
+    teacher_birth DATE,
+    teacher_gender VARCHAR(6)
 );
+```
+
+```shell
+# Query the Tablespace usage
+
+openGauss=# SELECT PG_TABLESPACE_SIZE('tablespace1');
+
+ pg_tablespace_size
+--------------------
+               8192
+```
+
+```shell
+# Modify the Tablespace
+
+ openGauss=# ALTER TABLESPACE tablespace1 RENAME TO tbspace1;
+
+ openGauss=# /db
+
+    Name    | Owner |          Location
+------------+-------+-----------------------------
+ pg_default | omm   |
+ pg_global  | omm   |
+ tbspace1   | omm   | /opt/tablespace/tablespace1
+```
+
+```shell
+# Delete a Tablespace
+
+openGauss=# DROP TABLESPACE tbspace1;
+ERROR:  tablespace "tbspace1" is not empty
+
+openGauss=# DROP TABLE student;
+
+openGauss=# DROP TABLE teacher;
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
 ```
