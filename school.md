@@ -3,7 +3,10 @@
 ```shell
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 
+# Create a Database User
 openGauss=# CREATE USER user1 IDENTIFIED BY 'Huawei@123';
+
+# Create a Database
 openGauss=# CREATE DATABASE db1 OWNER user1;
 
 openGauss=# \l
