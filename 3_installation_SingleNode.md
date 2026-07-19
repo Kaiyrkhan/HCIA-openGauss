@@ -146,10 +146,9 @@ SELECT version();
 ```
 
 `\copyright` – copyright information  
-`h`          – help    
+`\h`         – view all SQL statements     
 `\l`         – дерекқорлардың тізімін көру  
 `\c school`  – school дерекқорына қосылу  
-`\c finance` – finance дерекқорына қосылу  
 `\dt`        – кестелерді көрсету  
 `\q`         – шығу  
 
@@ -349,10 +348,9 @@ SELECT version();
 ```
 
 `\copyright` – copyright information  
-`h`          – help    
+`\h`         – view all SQL statements   
 `\l`         – дерекқорлардың тізімін көру  
 `\c school`  – school дерекқорына қосылу  
-`\c finance` – finance дерекқорына қосылу  
 `\dt`        – кестелерді көрсету  
 `\q`         – шығу  
 
