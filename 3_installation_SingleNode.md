@@ -463,7 +463,7 @@ CREATE TABLE student (
 
 SET default_tablespace = tablespace1;
 
-CREATE TABLE stud (
+CREATE TABLE student (
     student_id INT,
     student_name VARCHAR(50),
     student_age DATE,
