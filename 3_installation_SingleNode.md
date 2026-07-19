@@ -145,7 +145,7 @@ SELECT version();
 \q
 ```
 
-`\copyright` – View the copyright information  
+`\copyright` – copyright information  
 `h`          – help    
 `\l`         – дерекқорлардың тізімін көру  
 `\c school`  – school дерекқорына қосылу  
@@ -348,7 +348,7 @@ SELECT version();
 \q
 ```
 
-`\copyright` – View the copyright information  
+`\copyright` – copyright information  
 `h`          – help    
 `\l`         – дерекқорлардың тізімін көру  
 `\c school`  – school дерекқорына қосылу  
