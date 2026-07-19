@@ -494,9 +494,7 @@ SELECT datname FROM pg_database;
    Name    | Owner | Encoding |   Collate   |    Ctype    | Access privileges
 -----------+-------+----------+-------------+-------------+-------------------
  db1       | omm   | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
- finance   | omm   | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
  postgres  | omm   | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
- school    | omm   | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
  template0 | omm   | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/omm           +
            |       |          |             |             | omm=CTc/omm
  template1 | omm   | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/omm           +
@@ -504,9 +502,32 @@ SELECT datname FROM pg_database;
 ```
 
 ```shell
+# Modify a Database
+
+# Modify the default search path of the Database
+ALTER DATABASE db1 SET search_path TO pa_catalog,public;
+
+# Change the Database Tablespace
+ALTER DATABASE db1 SET TABLESPACE tbspace2;
+
+# Rename the Database
+ALTER DATABASE db1 RENAME TO db2;
 ```
 
 ```shell
+# Delete a Database
+
+DROP DATABASE db2;
+\l
+
+   Name    | Owner | Encoding |   Collate   |    Ctype    | Access privileges
+-----------+-------+----------+-------------+-------------+-------------------
+ postgres  | omm   | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+ template0 | omm   | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/omm           +
+           |       |          |             |             | omm=CTc/omm
+ template1 | omm   | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/omm           +
+           |       |          |             |             | omm=CTc/omm
+
 ```
 
 ```shell
