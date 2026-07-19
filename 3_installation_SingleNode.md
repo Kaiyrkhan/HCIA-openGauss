@@ -3,6 +3,7 @@
 | item                        | value                           |
 |-----------------------------|---------------------------------|
 | Operating System            | openEuler 22.03 LTS SP4 x86_64  |
+| openGauss Database          | openGauss Server 6.0.5 x86_64   |
 | Hostname                    | openGauss                       |
 | Linux User                  | omm                             |
 | Linux Group                 | dbgroup                         |
