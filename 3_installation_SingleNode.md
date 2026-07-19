@@ -276,8 +276,67 @@ omm@openGauss~$ sudo poweroff
 ```
 
 ```shell
-# SQL Commands
+# Create systemd Service
 
+student@openGauss~$ sudo vi /etc/systemd/system/opengauss.service
+
+[Unit]
+Description=openGauss Single Node Database
+After=network.target
+
+[Service]
+Type=forking
+User=omm
+Group=dbgroup
+ExecStart=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl start -D /opt/openGauss/data/single_node -Z single_node'
+ExecStop=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl stop -D /opt/openGauss/data/single_node -m fast'
+ExecReload=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl restart -D /openGauss/data/single_node -Z single_node'
+TimeoutSec=300
+
+[Install]
+WantedBy=multi-user.target
+
+:wq
+
+student@openGauss~$ sudo systemctl daemon-reload
+student@openGauss~$ sudo systemctl enable opengauss
+
+student@openGauss~$ su - omm -c 'source ~/.bashrc; gs_ctl stop -D /opt/openGauss/data/single_node -m fast'
+server stopped
+
+student@openGauss~$ sudo systemctl start opengauss
+student@openGauss~$ sudo systemctl status opengauss --no-pager
+```
+
+**Clear Bash History**
+```shell
+student@openGauss~$ history
+
+student@openGauss~$ ls -la
+student@openGauss~$ cat /dev/null > ~/.bash_history
+student@openGauss~$ history -c
+```
+
+**VMware Workstation -> Description**
+```shell
+Username: omm
+Password: 123
+
+Username: student
+Password: 123
+
+Username: root
+Password: P@s$w0rd
+```
+
+**Take Snapshot**
+```shell
+Snapshot Manager -> Take Snapshot -> Name: initial image
+```
+
+## SQL Commands
+
+```shell
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 
 openGauss=# CREATE USER user1 IDENTIFIED BY 'Huawei@123';
@@ -338,62 +397,3 @@ db1=> \q
 > GRANT USAGE, CREATE ON SCHEMA public TO user1;  
 > GRANT CREATE, USAGE, ALTER, DROP, COMMENT ON SCHEMA public TO user1;  
 > GRANT ALL PRIVILEGES ON SCHEMA public TO user1;  
-
-```shell
-# Create systemd Service
-
-student@openGauss~$ sudo vi /etc/systemd/system/opengauss.service
-
-[Unit]
-Description=openGauss Single Node Database
-After=network.target
-
-[Service]
-Type=forking
-User=omm
-Group=dbgroup
-ExecStart=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl start -D /opt/openGauss/data/single_node -Z single_node'
-ExecStop=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl stop -D /opt/openGauss/data/single_node -m fast'
-ExecReload=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl restart -D /openGauss/data/single_node -Z single_node'
-TimeoutSec=300
-
-[Install]
-WantedBy=multi-user.target
-
-:wq
-
-student@openGauss~$ sudo systemctl daemon-reload
-student@openGauss~$ sudo systemctl enable opengauss
-
-student@openGauss~$ su - omm -c 'source ~/.bashrc; gs_ctl stop -D /opt/openGauss/data/single_node -m fast'
-server stopped
-
-student@openGauss~$ sudo systemctl start opengauss
-student@openGauss~$ sudo systemctl status opengauss --no-pager
-```
-
-**Clear Bash History**
-```shell
-student@openGauss~$ history
-
-student@openGauss~$ ls -la
-student@openGauss~$ cat /dev/null > ~/.bash_history
-student@openGauss~$ history -c
-```
-
-**VMware Workstation -> Description**
-```shell
-Username: omm
-Password: 123
-
-Username: student
-Password: 123
-
-Username: root
-Password: P@s$w0rd
-```
-
-**Take Snapshot**
-```shell
-Snapshot Manager -> Take Snapshot -> Name: initial image
-```
