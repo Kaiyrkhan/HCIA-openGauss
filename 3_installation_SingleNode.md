@@ -137,6 +137,8 @@ student@openGauss~$ sudo nano -l /etc/profile.d/system-info.sh
 **Connecting to openGauss**
 
 ```shell
+omm@openGauss~$ gsql --help
+
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 
 SELECT version();
