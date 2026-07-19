@@ -411,24 +411,62 @@ student@openGauss~$ su - omm
 
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 
-openGauss=# CREATE TABLESPACE tablespace1 LOCATION '/opt/tablespace/tablespace1';
+openGauss=#
+```
 
+```shell
+# Create a Tablespace
+openGauss=# CREATE TABLESPACE tablespace1 LOCATION '/opt/tablespace/tablespace1';
+```
+
+```shell
+# Method 1: Query a Tablespace
 openGauss=# \db
+
     Name     | Owner |          Location
 -------------+-------+-----------------------------
  pg_default  | omm   |
  pg_global   | omm   |
  tablespace1 | omm   | /opt/tablespace/tablespace1
+
+
+# Method 2: Query a Tablespace
+SELECT spcname FROM pg_tablespace;
+
+   spcname
+-------------
+ pg_default
+ pg_global
+ tablespace1
 ```
 
 ```shell
+# Create a User and Grant the user the permissions to access the tablespace1 Tablespace
+
+openGauss=# CREATE USER user1 IDENTIFIED BY 'Huawei@123';
+openGauss=# GRANT CREATE ON TABLESPACE tablespace1 TO user1;
 ```
 
 ```shell
+# Method 1: Create a Table in the tablespace1 Tablespace
+
+CREATE TABLE student (
+    student_id INT,
+    student_name VARCHAR(50),
+    student_age DATE,
+    student_gender VARCHAR(50)
+) tablespace tablespace1;
 ```
 
 ```shell
-```
+# Method 2: Create a Table in the tablespace1 Tablespace
 
-```shell
+SET default_tablespace = tablespace1;
+
+CREATE TABLE stud (
+    student_id INT,
+    student_name VARCHAR(50),
+    student_age DATE,
+    student_gender VARCHAR(50)
+);
 ```
