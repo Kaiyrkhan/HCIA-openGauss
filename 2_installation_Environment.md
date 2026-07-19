@@ -2,7 +2,9 @@
 
 ### Step1 - Obtaining installation Package
 
-**Download openGauss:** https://opengauss.org/en/download/  
+**Download openGauss (Official Website):** https://opengauss.org/en/download/  
+
+**Download openGauss (Google Drive):** https://drive.google.com/file/d/1qUgH31Z1CxEkQ-PuPnanpp7i9Afn5qm9/view?usp=sharing  
 
 **Download WinSCP**: https://winscp.net/eng/download.php  
 
