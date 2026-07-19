@@ -398,7 +398,7 @@ db1=> \q
 > GRANT CREATE, USAGE, ALTER, DROP, COMMENT ON SCHEMA public TO user1;  
 > GRANT ALL PRIVILEGES ON SCHEMA public TO user1;  
 
-**Create a Tablespace**
+##  Creating, Querying, Modifying, and Deleting Tablespaces
 
 ```shell
 student@openGauss~$ sudo mkdir -p /opt/tablespace/tablespace1
@@ -504,6 +504,8 @@ ERROR:  tablespace "tbspace1" is not empty
 openGauss=# DROP TABLE student;
 
 openGauss=# DROP TABLE teacher;
+
+openGauss=# DROP TABLESPACE tbspace1;
 ```
 
 ```shell
