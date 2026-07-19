@@ -88,7 +88,7 @@ omm@openGauss~$
 
 omm@openGauss~$ cd /opt/openGauss/simpleInstall
 
-omm@openGauss~$ sh install.sh -w "openGauss@123"
+omm@openGauss~$ sh install.sh -w "Huawei@123"
 Would you like to create a demo database (yes/no)? yes
 ```
 `-w` – мәліметтер қорына құпиясөз орнату  
@@ -156,7 +156,7 @@ SELECT version();
 > gsql -d postgres -r  
 > gsql -d postgres -p 5432 -r  
 > gsql -d postgres -U omm -p 5432 -r  
-> gsql -d postgres -U omm -W "openGauss@123" -p 5432 -r  
+> gsql -d postgres -U omm -W "Huawei@123" -p 5432 -r  
 
 > Remote Connection  
 > gsql -h 192.168.0.103 -d postgres -U omm -p 5432 -r  
@@ -183,8 +183,8 @@ kernel.sem="250 85000 250 330"
 # import Demo Database
 
 omm@openGauss~$ cd /opt/openGauss/simpleInstall
-omm@openGauss~$ gsql -d postgres -U omm -W "openGauss@123" -f school.sql
-omm@openGauss~$ gsql -d postgres -U omm -W "openGauss@123" -f finance.sql
+omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f school.sql
+omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f finance.sql
 ```
 
 ```shell
