@@ -397,3 +397,38 @@ db1=> \q
 > GRANT USAGE, CREATE ON SCHEMA public TO user1;  
 > GRANT CREATE, USAGE, ALTER, DROP, COMMENT ON SCHEMA public TO user1;  
 > GRANT ALL PRIVILEGES ON SCHEMA public TO user1;  
+
+**Create a Tablespace**
+
+```shell
+student@openGauss~$ sudo mkdir -p /opt/tablespace/tablespace1
+student@openGauss~$ sudo chown -R omm:dbgroup /opt/tablespace
+student@openGauss~$ sudo chmod 700 /opt/tablespace/tablespace1
+```
+
+```shell
+student@openGauss~$ su - omm
+
+omm@openGauss~$ gsql -d postgres -p 5432 -r
+
+openGauss=# CREATE TABLESPACE tablespace1 LOCATION '/opt/tablespace/tablespace1';
+
+openGauss=# \db
+    Name     | Owner |          Location
+-------------+-------+-----------------------------
+ pg_default  | omm   |
+ pg_global   | omm   |
+ tablespace1 | omm   | /opt/tablespace/tablespace1
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
+
+```shell
+```
