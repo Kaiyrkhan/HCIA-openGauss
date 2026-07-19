@@ -457,7 +457,12 @@ openGauss=# DROP TABLE teacher;
 openGauss=# DROP TABLESPACE tbspace1;
 ```
 
+## Creating, Viewing, Modifying, and Deleting a Database
+
 ```shell
+
+CREATE TABLESPACE db_tbs1 LOCATION '/opt/tablespace/db_tbs1';
+CREATE TABLESPACE db_tbs2 LOCATION '/opt/tablespace/db_tbs2';
 ```
 
 ```shell
