@@ -398,6 +398,25 @@ db1=> \q
 > GRANT CREATE, USAGE, ALTER, DROP, COMMENT ON SCHEMA public TO user1;  
 > GRANT ALL PRIVILEGES ON SCHEMA public TO user1;  
 
+## Logging In to a Database
+
+```shell
+student@openGauss~$ su - omm
+
+omm@openGauss~$ gsql -d postgres -p 5432 -r
+
+openGauss=# SELECT version();
+openGauss=# \q
+```
+
+`\copyright` – openGauss version  
+`h` – help    
+`\l` – дерекқорлардың тізімін көру  
+`\c school` – school дерекқорына қосылу  
+`\c finance` – finance дерекқорына қосылу  
+`\dt` – кестелерді көрсету  
+`\q` – шығу  
+
 ##  Creating, Querying, Modifying, and Deleting Tablespaces
 
 ```shell
@@ -406,13 +425,7 @@ student@openGauss~$ sudo chown -R omm:dbgroup /opt/tablespace
 student@openGauss~$ sudo chmod 700 /opt/tablespace/tablespace1
 ```
 
-```shell
-student@openGauss~$ su - omm
 
-omm@openGauss~$ gsql -d postgres -p 5432 -r
-
-openGauss=#
-```
 
 ```shell
 # Create a Tablespace
