@@ -460,9 +460,10 @@ openGauss=# DROP TABLESPACE tbspace1;
 ## Creating, Viewing, Modifying, and Deleting a Database
 
 ```shell
+# Create two tablespaces tbspace1 and tbspace2
 
-CREATE TABLESPACE db_tbs1 LOCATION '/opt/tablespace/db_tbs1';
-CREATE TABLESPACE db_tbs2 LOCATION '/opt/tablespace/db_tbs2';
+CREATE TABLESPACE tbspace1 LOCATION '/opt/tablespace/tbspace1';
+CREATE TABLESPACE tbspace1 LOCATION '/opt/tablespace/tbspace2';
 ```
 
 ```shell
