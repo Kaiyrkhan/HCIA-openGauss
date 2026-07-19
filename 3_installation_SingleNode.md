@@ -144,13 +144,14 @@ omm@openGauss~$ gsql -d postgres -p 5432 -r
 SELECT version();
 \q
 ```
-`\copyright` – openGauss version  
-`h` – help    
-`\l` – дерекқорлардың тізімін көру  
-`\c school` – school дерекқорына қосылу  
+
+`\copyright` – View the copyright information  
+`h`          – help    
+`\l`         – дерекқорлардың тізімін көру  
+`\c school`  – school дерекқорына қосылу  
 `\c finance` – finance дерекқорына қосылу  
-`\dt` – кестелерді көрсету  
-`\q` – шығу  
+`\dt`        – кестелерді көрсету  
+`\q`         – шығу  
 
 > Local Connection  
 > gsql -d postgres -r  
@@ -347,7 +348,7 @@ SELECT version();
 \q
 ```
 
-`\copyright` – openGauss version  
+`\copyright` – View the copyright information  
 `h`          – help    
 `\l`         – дерекқорлардың тізімін көру  
 `\c school`  – school дерекқорына қосылу  
