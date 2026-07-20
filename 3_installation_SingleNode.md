@@ -114,7 +114,7 @@ Would you like to create a demo database (yes/no)? yes
 omm@openGauss~$ source ~/.bashrc
 -bash: ulimit: open files: cannot modify limit: Operation not permitted
 
-omm@openGauss~$ vi ~/.bashrc
+omm@openGauss~$ nano ~/.bashrc
 # ulimit -n 1000000
 :wq
 
@@ -171,14 +171,14 @@ ALTER ROLE omm IDENTIFIED BY 'new_password' REPLACE 'old_password';
 ```
 
 ```shell
-# Error SEMMNI
+# Semaphores
 
 student@openGauss~$ sysctl -w kernel.sem="250 85000 250 330"
 немесе
-student@openGauss~$ sudo vi /etc/sysctl.conf
+student@openGauss~$ sudo nano /etc/sysctl.conf
 kernel.sem="250 85000 250 330"
-:wq
 ```
+![images](./images/semaphores.png)
 
 ```shell
 # import Demo Database
