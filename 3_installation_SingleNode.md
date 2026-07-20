@@ -137,7 +137,7 @@ omm@openGauss~$ ps ux | grep gaussdb
 
 ```shell
 omm@openGauss~$ gs_ctl query -D /opt/openGauss/data/single_node
-Normal
+db_state: Normal
 ```
 ![images](./images/opengauss_gsctl-query.png)
 
