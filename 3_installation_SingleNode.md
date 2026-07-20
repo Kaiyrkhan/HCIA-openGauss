@@ -171,13 +171,18 @@ ALTER ROLE omm IDENTIFIED BY 'new_password' REPLACE 'old_password';
 ```
 
 ```shell
-# System V Semaphore
+# Configure Kernel Semaphore Parameters (Optional)
 
 student@openGauss~$ sysctl -w kernel.sem="250 85000 250 330"
 немесе
 student@openGauss~$ sudo nano /etc/sysctl.conf
 kernel.sem="250 85000 250 330"
 ```
+
+> **ЕСКЕРТУ!**  
+> openGauss-ты орнату барысында `the maximum number of SEMMNI is not correct` деген қате шықса ғана, `kernel.sem` параметрін өзгерту ұсынылады!  
+> егер, openGauss-ты орнату `install.sh` сәтті аяқталып, database қалыпты іске қосылса `db_state: Normal`, `kernel.sem` параметрін өзгерту қажет емес!  
+
 ![images](./images/opengauss_semaphores.png)
 
 ```shell
