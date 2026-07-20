@@ -310,6 +310,14 @@ student@openGauss~$ sudo systemctl start opengauss
 student@openGauss~$ sudo systemctl status opengauss --no-pager
 ```
 
+```shell
+# Create a Tablespace Directory
+
+student@openGauss~$ sudo mkdir -p /opt/tablespace
+student@openGauss~$ sudo chown -R omm:dbgroup /opt/tablespace
+student@openGauss~$ sudo chmod 700 /opt/tablespace
+```
+
 **Clear Bash History**
 ```shell
 student@openGauss~$ history
