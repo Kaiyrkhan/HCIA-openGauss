@@ -6,33 +6,36 @@
 
 ```shell
 CREATE TABLE student (
- s_id INT,
- s_name VARCHAR(50),
- s_age DATE,
- s_gender VARCHAR(50)
+    student_id INT,
+    student_name VARCHAR(30),
+    student_gender VARCHAR(6),
+    student_birth DATE
 );
 ```
 
 ```shell
 CREATE TABLE course (
- c_id INT,
- c_name VARCHAR(50),
- t_id INT
+    course_id INT,
+    course_name VARCHAR(50),
+    teacher_id INT
 );
 ```
 
 ```shell
 CREATE TABLE teacher (
- t_id INT,
- t_name VARCHAR(50)
+    teacher_id INT,
+    teacher_name VARCHAR(30),
+    teacher_jobtitle VARCHAR(20),
+    teacher_gender VARCHAR(6),
+    teacher_age DATE
 );
 ```
 
 ```shell
-CREATE TABLE score (
- s_id INT,
- c_id INT,
- score INT
+CREATE TABLE grade (
+    grade_id INT,
+    course_id INT,
+    grade INT
 );
 ```
 
