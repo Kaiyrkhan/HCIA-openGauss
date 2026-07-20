@@ -123,7 +123,7 @@ CTRL+L
 
 omm@openGauss~$ source ~/.bashrc
 ```
-`source ~/.bashrc` – өзгерістерді іске асырады, яғни жаңадан қосылған айнымалылар болса (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
+`source ~/.bashrc` – өзгерістерді іске асырады, яғни жаңадан пайда болған айнымалылар болса (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
 
 **Verify Database**
 
