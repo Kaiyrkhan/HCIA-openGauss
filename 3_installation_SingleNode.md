@@ -236,6 +236,7 @@ Reload
 gs_ctl reload -D $GAUSSHOME/data/single_node
 ```
 
+> **Түсіндірме!**
 > **`pg_hba.conf`** файлдың ішіндегі **`trust`** мәнін **`sha256`** мәніне өзгертетін болсаңыз, database-ге кірген кезде **құпиясөз**ді сұрайтын болады!
 
 ```shell
