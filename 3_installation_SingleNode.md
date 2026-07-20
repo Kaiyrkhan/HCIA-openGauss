@@ -14,7 +14,7 @@
 | openGauss Database Password | Huawei@123                      |
 
 
-**Hostname (optional)**
+**Configure Hostname Resolution (optional)**
 ```shell
 student@openGauss~$ sudo nano /etc/hosts
 192.168.0.103 openGauss
