@@ -50,11 +50,30 @@ student@openGauss~$ ss -tulpn | grep 5432
 student@openGauss~$ netstat -tulpn | grep 5432
 ```
 
-**DeCompress**
+**Downloading a Database Installation Package**
+
 ```shell
-student@openGauss~$ ls -lh
-openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
+student@openGauss~$ pip install gdown
+student@openGauss~$ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+student@openGauss~$ source ~/.bashrc
+
+student@openGauss~$ which gdown
+/home/student/.local/bin/gdown
+
+student@openGauss~$ gdown --version
+gdown 5.2.2 at /home/student/.local/lib/python3.9/site-packages
 ```
+
+**Google Drive download File ID:** 1qUgH31Z1CxEkQ-PuPnanpp7i9Afn5qm9  
+
+```shell
+student@openGauss~$ gdown 1qUgH31Z1CxEkQ-PuPnanpp7i9Afn5qm9
+
+student@openGauss~$ ls -lh
+-rw-r--r-- student student 75M openGauss-Server-6.0.5-openEuler22.03-x86_64.tar.bz2
+```
+
+**DeCompress**
 
 ```shell
 student@openGauss~$ sudo mkdir /opt/openGauss
