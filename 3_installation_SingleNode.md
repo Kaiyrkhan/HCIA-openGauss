@@ -192,9 +192,11 @@ omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f finance.sql
 # Configure Firewalld
 
 student@openGauss~$ sudo systemctl status firewalld
+student@openGauss~$ sudo systemctl is-enabled firewalld
 
 student@openGauss~$ sudo systemctl enable --now firewalld
 student@openGauss~$ sudo firewall-cmd --permanent --add-port=5432/tcp
+student@openGauss~$ sudo firewall-cmd --permanent --add-port=5433/tcp
 student@openGauss~$ sudo firewall-cmd --reload
 
 student@openGauss~$ sudo firewall-cmd --list-all
