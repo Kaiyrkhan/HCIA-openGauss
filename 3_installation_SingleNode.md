@@ -173,10 +173,14 @@ ALTER ROLE omm IDENTIFIED BY 'new_password' REPLACE 'old_password';
 ```shell
 # Configure Kernel Semaphore Parameters (Optional)
 
-student@openGauss~$ sysctl -w kernel.sem="250 85000 250 330"
-немесе
 student@openGauss~$ sudo nano /etc/sysctl.conf
 kernel.sem="250 85000 250 330"
+
+# Өзгерісті іске асыру
+student@openGauss~$ sudo sysctl -p
+
+# Нәтижені тексеру
+student@openGauss~$ sysctl kernel.sem
 ```
 
 > **ЕСКЕРТУ!**  
