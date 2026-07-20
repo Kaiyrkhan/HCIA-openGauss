@@ -521,6 +521,8 @@ DROP TABLE student;
 DROP TABLE teacher;
 
 DROP TABLESPACE tbs1;
+
+/db
 ```
 
 ## Creating, Viewing, Modifying, and Deleting a Database
