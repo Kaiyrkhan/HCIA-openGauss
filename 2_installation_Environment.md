@@ -189,7 +189,7 @@ student@openGauss~$ systemctl show systemd-logind | grep RemoveIPC
 RemoveIPC=no
 ```
 
-### Step9 - Disabling History Command
+### Step9 - Disabling History Command (Optional)
 
 ```shell
 student@openGauss~$ sudo nano /etc/profile
