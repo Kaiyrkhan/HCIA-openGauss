@@ -98,9 +98,11 @@ student@openGauss~$ rpm -q libaio-devel readline-devel expect
 
 SELinux
 ```shell
-student@openGauss~$ sudo vi /etc/selinux/config
+student@openGauss~$ sudo nano /etc/selinux/config
 SELINUX=disabled
-:wq
+
+CTRL+O, ENTER, CTRL+X
+CTRL+L
 
 student@openGauss~$ sudo reboot
 
@@ -190,7 +192,7 @@ RemoveIPC=no
 ### Step9 - Disabling History Command
 
 ```shell
-student@openGauss~$ sudo vi /etc/profile
+student@openGauss~$ sudo nano /etc/profile
 student@openGauss~$ source /etc/profile
 
 student@openGauss~$ echo $HISTSIZE
