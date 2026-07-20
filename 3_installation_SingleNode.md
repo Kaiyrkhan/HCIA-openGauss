@@ -171,7 +171,7 @@ ALTER ROLE omm IDENTIFIED BY 'new_password' REPLACE 'old_password';
 ```
 
 ```shell
-# Semaphores
+# System V Semaphore
 
 student@openGauss~$ sysctl -w kernel.sem="250 85000 250 330"
 немесе
