@@ -111,16 +111,19 @@ Would you like to create a demo database (yes/no)? yes
 `-w` – дерекқорға құпиясөз орнату  
 
 ```shell
+# Өзгерісті іске асыру
 omm@openGauss~$ source ~/.bashrc
 -bash: ulimit: open files: cannot modify limit: Operation not permitted
 
 omm@openGauss~$ nano ~/.bashrc
 # ulimit -n 1000000
-:wq
+
+CTRL+O, ENTER, CTRL+X
+CTRL+L
 
 omm@openGauss~$ source ~/.bashrc
 ```
-`source ~/.bashrc` – жаңадан қосылған айнымалыларды (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
+`source ~/.bashrc` – өзгерістерді іске асырады, яғни жаңадан қосылған айнымалылар болса (мысалы: GAUSSHOME, gsql) жүйеге енгізеді  
 
 **Verify Database**
 
