@@ -193,4 +193,6 @@ student@openGauss~$ source /etc/profile
 
 student@openGauss~$ echo $HISTSIZE
 0
+student@openGauss~$ sudo grep "HISTSIZE=" /etc/profile
+HISTSIZE=0
 ```
