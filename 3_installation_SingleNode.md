@@ -308,11 +308,14 @@ omm@openGauss~$ bash
 > **omm қолданушы** жүйені `Reboot` немесе `Shutdown` жасай алу үшін, төмендегі конфигурацияны жасау керек!  
 
 ```shell
-student@openGauss~$ sudo vim /etc/sudoers
+student@openGauss~$ sudo nano /etc/sudoers
 немесе
 student@openGauss~$ sudo visudo
+# %wheel        ALL=(ALL)       NOPASSWD: ALL
 omm ALL=(ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/poweroff
-:wq
+
+CTRL+O, ENTER, CTRL+X
+CTRL+L
 
 omm@openGauss~$ sudo reboot
 omm@openGauss~$ sudo shutdown -h now
@@ -321,7 +324,7 @@ omm@openGauss~$ sudo poweroff
 
 **Create the openGauss systemd Service**
 ```shell
-student@openGauss~$ sudo vi /etc/systemd/system/opengauss.service
+student@openGauss~$ sudo nano /etc/systemd/system/opengauss.service
 
 [Unit]
 Description=openGauss Single Node Database
