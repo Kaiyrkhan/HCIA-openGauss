@@ -93,8 +93,8 @@ drwxr-xr-x  root root   simpleInstall
 student@openGauss~$ sudo chown -R omm:dbgroup /opt/openGauss
 student@openGauss~$ sudo chmod -R 755 /opt/openGauss
 
-student@openGauss~$ ls -l /opt
-drwxr-xr-x  omm dbgroup openGauss
+student@openGauss~$ ls -ld /opt/openGauss
+drwxr-xr-x omm dbgroup /opt/openGauss
 ```
 
 **install openGauss**
