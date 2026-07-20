@@ -162,7 +162,7 @@ omm@openGauss~$ gsql -d postgres -p 5432 -r
 > Remote Connection  
 > gsql -h 192.168.0.103 -d postgres -p 5432 -U omm -W "Huawei@123" -r  
 
-**Қосымша ақпарат!**
+## Қосымша ақпарат!
 
 ```shell
 # Құпиясөзді өзгерту (Optional)
