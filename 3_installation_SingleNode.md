@@ -164,15 +164,13 @@ omm@openGauss~$ gsql -d postgres -p 5432 -r
 
 ## Қосымша ақпарат!
 
+**Құпиясөзді өзгерту (Optional)**
 ```shell
-# Құпиясөзді өзгерту (Optional)
-
 ALTER ROLE omm IDENTIFIED BY 'new_password' REPLACE 'old_password';
 ```
 
+**Configure Kernel Semaphore Parameters (Optional)**
 ```shell
-# Configure Kernel Semaphore Parameters (Optional)
-
 student@openGauss~$ sudo nano /etc/sysctl.conf
 kernel.sem="250 85000 250 330"
 
@@ -189,17 +187,19 @@ student@openGauss~$ sysctl kernel.sem
 
 ![images](./images/opengauss_kernel_semaphore.png)
 
+**import Demo Database file (Optional)**
 ```shell
-# import Demo Database (Optional)
+omm@openGauss~$ ls -l /opt/openGauss/simpleInstall
+-rwxr-xr-x omm dbgroup finance.sql
+-rwxr-xr-x omm dbgroup school.sql
 
 omm@openGauss~$ cd /opt/openGauss/simpleInstall
 omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f school.sql
 omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f finance.sql
 ```
 
+**Configure Firewalld**
 ```shell
-# Configure Firewalld
-
 student@openGauss~$ sudo systemctl status firewalld
 student@openGauss~$ sudo systemctl is-enabled firewalld
 
@@ -214,11 +214,10 @@ $ ss -tulpn | grep 5432
 $ netstat -tulpn | grep 5432
 ```
 
+**openGauss Database Services**
 ```shell
 omm@openGauss~$ echo $GAUSSHOME
 /opt/openGauss
-
-# openGauss Database Service
 
 Status
 gs_ctl query -D $GAUSSHOME/data/single_node
@@ -236,12 +235,11 @@ Reload
 gs_ctl reload -D $GAUSSHOME/data/single_node
 ```
 
-> **ТҮСІНДІРМЕ!**  
-> **`pg_hba.conf`** файлдың ішіндегі **`trust`** мәнін **`sha256`** мәніне өзгертетін болсаңыз, database-ге кірген кезде **құпиясөз**ді сұрайтын болады!  
+**Configure Database Client Authentication (Optional)**
+
+> **ТҮСІНДІРМЕ!** **`pg_hba.conf`** файлдың ішіндегі **`trust`** мәнін **`sha256`** мәніне өзгертетін болсаңыз, database-ге кірген кезде **құпиясөз**ді сұрайтын болады!  
 
 ```shell
-# Configure Database Client Authentication (Optional)
-
 omm@openGauss~$ grep -n "trust" /opt/openGauss/data/single_node/pg_hba.conf
 
 TYPE    DATABASE    USER    ADDRESS        METHOD
@@ -261,10 +259,14 @@ omm@openGauss~$ gs_ctl reload -D $GAUSSHOME/data/single_node
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 ```
 
-```shell
-# "NOTICE: The password has been expired, please change the password" - мұндай хабарлама шықпау үшін, төмендегі конфигурацияны жасау керек!
+**Configure Password Expiration Policy**
 
+> `NOTICE: The password has been expired, please change the password` - мұндай хабарлама шықпау үшін, төмендегі конфигурацияны жасау керек!  
+
+```shell
+# Disable Password Expiration
 omm@openGauss~$ gs_guc reload -D $GAUSSHOME/data/single_node -c "password_effect_time = 0"
+# Disable Expiration Notifications
 omm@openGauss~$ gs_guc reload -D $GAUSSHOME/data/single_node -c "password_notify_time = 0"
 
 # Нәтижені тексеру
@@ -274,18 +276,19 @@ omm@openGauss~$ grep -n "password_effect_time" $GAUSSHOME/data/single_node/postg
 omm@openGauss~$ grep -n "password_notify_time" $GAUSSHOME/data/single_node/postgresql.conf
 ```
 
-```shell
-# "To run a command as administrator(user "root"),use "sudo <command>"." - мұндай хабарлама шықпау үшін, төмендегі конфигурацияны жасау керек!
+**Configure profile**
 
+> `To run a command as administrator(user "root"),use "sudo <command>".` - мұндай хабарлама шықпау үшін, төмендегі конфигурацияны жасау керек!
+
+```shell
 student@openGauss~$ sudo nano -l /etc/profile.d/system-info.sh
 84 else
 85     echo -e "\n"
 student@openGauss~$ source /etc/profile
 ```
 
+**Configure the openGauss Login Information Display**
 ```shell
-# Configure the openGauss Login Information Display
-
 omm@openGauss~$ nano .bashrc
 echo -e "Run the following command to log in to the postgres database:"
 echo -e "  \033[1;33mgsql -d postgres -p 5432 -r\033[0m\n"
@@ -294,9 +297,11 @@ echo -e "openGauss database user: \033[1;33momm\033[0m"
 echo -e "openGauss database password: \033[1;33mHuawei@123\033[0m\n"
 ```
 
-```shell
-# "omm" қолданушы жүйені "Reboot" немесе "Shutdown" жасай алу үшін, төмендегі конфигурацияны жасау керек!
+**Reboot and Shutdown**
 
+> **omm қолданушы** жүйені `Reboot` немесе `Shutdown` жасай алу үшін, төмендегі конфигурацияны жасау керек!  
+
+```shell
 student@openGauss~$ sudo vim /etc/sudoers
 немесе
 student@openGauss~$ sudo visudo
@@ -308,9 +313,8 @@ omm@openGauss~$ sudo shutdown -h now
 omm@openGauss~$ sudo poweroff
 ```
 
+**Create systemd Service**
 ```shell
-# Create systemd Service
-
 student@openGauss~$ sudo vi /etc/systemd/system/opengauss.service
 
 [Unit]
@@ -341,9 +345,8 @@ student@openGauss~$ sudo systemctl start opengauss
 student@openGauss~$ sudo systemctl status opengauss --no-pager
 ```
 
+**Create a Tablespace Directory**
 ```shell
-# Create a Tablespace Directory
-
 student@openGauss~$ sudo mkdir -p /opt/tablespace
 student@openGauss~$ sudo chown -R omm:dbgroup /opt/tablespace
 student@openGauss~$ sudo chmod 700 /opt/tablespace
