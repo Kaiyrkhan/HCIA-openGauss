@@ -121,19 +121,6 @@ Normal
 ```
 ![images](./images/opengauss_gsctl-query.png)
 
-```shell
-omm@openGauss~$ nano .bashrc
-echo -e "Run the following command to log in to the postgres database:"
-echo -e "  \033[1;33mgsql -d postgres -p 5432 -r\033[0m\n"
-
-echo -e "openGauss database user: \033[1;33momm\033[0m"
-echo -e "openGauss database password: \033[1;33mHuawei@123\033[0m\n"
-
-student@openGauss~$ sudo nano -l /etc/profile.d/system-info.sh
-84 else
-85     echo -e "\n"
-```
-
 **Connecting to openGauss**
 
 ```shell
@@ -153,13 +140,10 @@ SELECT version();
 `\q`         – шығу  
 
 > Local Connection  
-> gsql -d postgres -r  
-> gsql -d postgres -p 5432 -r  
-> gsql -d postgres -U omm -p 5432 -r  
-> gsql -d postgres -U omm -W "Huawei@123" -p 5432 -r  
+> gsql -d postgres -p 5432 -U omm -W "Huawei@123" -r  
 
 > Remote Connection  
-> gsql -h 192.168.0.103 -d postgres -U omm -p 5432 -r  
+> gsql -h 192.168.0.103 -d postgres -p 5432 -U omm -W "Huawei@123" -r  
 
 **Қосымша ақпарат!**
 
@@ -190,9 +174,13 @@ omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f finance.sql
 ```shell
 # Configure Firewalld
 
+student@openGauss~$ sudo systemctl status firewalld
+
 student@openGauss~$ sudo systemctl enable --now firewalld
 student@openGauss~$ sudo firewall-cmd --permanent --add-port=5432/tcp
 student@openGauss~$ sudo firewall-cmd --reload
+
+student@openGauss~$ sudo firewall-cmd --list-all
 
 $ ss -tulpn | grep 5432
 $ netstat -tulpn | grep 5432
@@ -262,6 +250,25 @@ omm@openGauss~$ grep -n "password_effect_time" $GAUSSHOME/data/single_node/postg
 omm@openGauss~$ grep -n "password_notify_time" $GAUSSHOME/data/single_node/postgresql.conf
 ```
 
+```shell
+# "To run a command as administrator(user "root"),use "sudo <command>"." - мұндай хабарлама шықпау үшін, төмендегі конфигурацияны жасау керек!
+
+student@openGauss~$ sudo nano -l /etc/profile.d/system-info.sh
+84 else
+85     echo -e "\n"
+student@openGauss~$ source /etc/profile
+```
+
+```shell
+# Configure the openGauss Login Information Display
+
+omm@openGauss~$ nano .bashrc
+echo -e "Run the following command to log in to the postgres database:"
+echo -e "  \033[1;33mgsql -d postgres -p 5432 -r\033[0m\n"
+
+echo -e "openGauss database user: \033[1;33momm\033[0m"
+echo -e "openGauss database password: \033[1;33mHuawei@123\033[0m\n"
+```
 
 ```shell
 # "omm" қолданушы жүйені "Reboot" немесе "Shutdown" жасай алу үшін, төмендегі конфигурацияны жасау керек!
