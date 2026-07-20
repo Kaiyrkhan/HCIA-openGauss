@@ -336,7 +336,7 @@ User=omm
 Group=dbgroup
 ExecStart=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl start -D /opt/openGauss/data/single_node -Z single_node'
 ExecStop=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl stop -D /opt/openGauss/data/single_node -m fast'
-ExecReload=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl restart -D /openGauss/data/single_node -Z single_node'
+ExecReload=/bin/bash -lc 'source /home/omm/.bashrc; gs_ctl reload -D /opt/openGauss/data/single_node'
 TimeoutSec=300
 
 [Install]
@@ -348,9 +348,13 @@ CTRL+L
 student@openGauss~$ sudo systemctl daemon-reload
 student@openGauss~$ sudo systemctl enable opengauss
 
+student@openGauss~$ sudo systemctl restart opengauss
+student@openGauss~$ sudo systemctl status opengauss --no-pager
+
+немесе
+
 student@openGauss~$ sudo su - omm -c 'source ~/.bashrc; gs_ctl stop -D /opt/openGauss/data/single_node -m fast'
 server stopped
-
 student@openGauss~$ sudo systemctl start opengauss
 student@openGauss~$ sudo systemctl status opengauss --no-pager
 ```
