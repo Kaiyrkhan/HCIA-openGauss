@@ -14,12 +14,10 @@
 | openGauss Database Password | Huawei@123                      |
 
 
-**Hostname**
+**Hostname (optional)**
 ```shell
-student@openGauss~$ sudo vi /etc/hosts
-Shift+} -> Edit mode -> Enter
+student@openGauss~$ sudo nano /etc/hosts
 192.168.0.103 openGauss
-Normal mode -> :wq
 ```
 
 ```shell
