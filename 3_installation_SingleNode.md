@@ -216,9 +216,6 @@ $ netstat -tulpn | grep 5432
 
 **openGauss Database Service Management**
 ```shell
-omm@openGauss~$ echo $GAUSSHOME
-/opt/openGauss
-
 Status
 gs_ctl query -D $GAUSSHOME/data/single_node
 
@@ -233,6 +230,11 @@ gs_ctl restart -D $GAUSSHOME/data/single_node -Z single_node
 
 Reload
 gs_ctl reload -D $GAUSSHOME/data/single_node
+```
+
+```shell
+omm@openGauss~$ echo $GAUSSHOME
+/opt/openGauss
 ```
 
 **Configure Database Client Authentication (Optional)**
