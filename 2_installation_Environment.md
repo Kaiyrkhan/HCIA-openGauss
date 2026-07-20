@@ -94,7 +94,7 @@ student@openGauss~$ sudo dnf install -y libaio-devel readline-devel expect glibc
 student@openGauss~$ rpm -q libaio-devel readline-devel expect
 ```
 
-### Step4 - Disabling SELinux and firewalld
+### Step4 - Disabling SELinux and Firewalld
 
 SELinux
 ```shell
