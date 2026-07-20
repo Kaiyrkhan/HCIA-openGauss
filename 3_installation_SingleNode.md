@@ -147,14 +147,13 @@ omm@openGauss~$ gsql --help
 
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 
-openGauss=# help
-
-openGauss=# \q
+\q
 ```
 
+`help`       – help  
 `\copyright` – copyright information  
 `\h`         – view all SQL statements     
-`\l`         – дерекқорлардың тізімін көру  
+`\l`         – дерекқорлар тізімін көру  
 `\c school`  – school дерекқорына қосылу  
 `\dt`        – кестелерді көрсету  
 `\q`         – шығу  
@@ -384,7 +383,7 @@ omm@openGauss~$ gsql -d postgres -p 5432 -r
 `help`       – help  
 `\copyright` – copyright information  
 `\h`         – view all SQL statements   
-`\l`         – дерекқорлардың тізімін көру  
+`\l`         – дерекқорлар тізімін көру  
 `\c school`  – school дерекқорына қосылу  
 `\dt`        – кестелерді көрсету  
 `\q`         – шығу  
