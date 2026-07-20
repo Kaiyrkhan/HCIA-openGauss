@@ -128,7 +128,6 @@ omm@openGauss~$ gsql --help
 
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 
-SELECT version();
 \q
 ```
 
@@ -358,7 +357,6 @@ student@openGauss~$ su - omm
 
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 
-SELECT version();
 \q
 ```
 
