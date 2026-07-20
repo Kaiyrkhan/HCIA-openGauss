@@ -342,7 +342,8 @@ TimeoutSec=300
 [Install]
 WantedBy=multi-user.target
 
-:wq
+CTRL+O, ENTER, CTRL+X
+CTRL+L
 
 student@openGauss~$ sudo systemctl daemon-reload
 student@openGauss~$ sudo systemctl enable opengauss
