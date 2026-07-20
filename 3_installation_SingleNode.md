@@ -297,7 +297,7 @@ echo -e "openGauss database user: \033[1;33momm\033[0m"
 echo -e "openGauss database password: \033[1;33mHuawei@123\033[0m\n"
 ```
 
-**Reboot and Shutdown**
+**Allow the omm User to Reboot and Shut Down the System**
 
 > **omm қолданушы** жүйені `Reboot` немесе `Shutdown` жасай алу үшін, төмендегі конфигурацияны жасау керек!  
 
