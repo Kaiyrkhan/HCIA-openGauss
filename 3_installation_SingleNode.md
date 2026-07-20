@@ -187,7 +187,7 @@ student@openGauss~$ sysctl kernel.sem
 > openGauss-ты орнату барысында `the maximum number of SEMMNI is not correct` деген қате шықса ғана, `kernel.sem` параметрін өзгерту ұсынылады!  
 > егер, openGauss-ты орнату `install.sh` сәтті аяқталып, database қалыпты іске қосылса `db_state: Normal`, `kernel.sem` параметрін өзгерту қажет емес!  
 
-![images](./images/opengauss_semaphores.png)
+![images](./images/opengauss_kernel_semaphore.png)
 
 ```shell
 # import Demo Database
