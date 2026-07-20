@@ -313,7 +313,7 @@ omm@openGauss~$ sudo shutdown -h now
 omm@openGauss~$ sudo poweroff
 ```
 
-**Create systemd Service**
+**Create the openGauss systemd Service**
 ```shell
 student@openGauss~$ sudo vi /etc/systemd/system/opengauss.service
 
