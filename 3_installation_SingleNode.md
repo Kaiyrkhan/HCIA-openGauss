@@ -178,7 +178,7 @@ student@openGauss~$ sysctl -w kernel.sem="250 85000 250 330"
 student@openGauss~$ sudo nano /etc/sysctl.conf
 kernel.sem="250 85000 250 330"
 ```
-![images](./images/semaphores.png)
+![images](./images/opengauss_semaphores.png)
 
 ```shell
 # import Demo Database
