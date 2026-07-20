@@ -141,13 +141,13 @@ student@openGauss~$ sudo systemctl status firewalld
 ### Step5 - Setting Character Set Parameters
 
 ```shell
-student@openGauss~$ localectl set-locale LANG=en_US.UTF-8
-немесе
 # Add export LANG=en_US.UTF-8 to the /etc/profile file
 student@openGauss~$ echo "export LANG=en_US.UTF-8" | sudo tee -a /etc/profile
 
 # Make the change take effect
 student@openGauss~$ source /etc/profile
+
+student@openGauss~$ localectl set-locale LANG=en_US.UTF-8
 
 # Нәтижені тексеру
 student@openGauss~$ localectl status
