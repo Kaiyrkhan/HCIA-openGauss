@@ -314,9 +314,6 @@ student@openGauss~$ sudo visudo
 # %wheel        ALL=(ALL)       NOPASSWD: ALL
 omm ALL=(ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/poweroff
 
-CTRL+O, ENTER, CTRL+X
-CTRL+L
-
 omm@openGauss~$ sudo reboot
 omm@openGauss~$ sudo shutdown -h now
 omm@openGauss~$ sudo poweroff
