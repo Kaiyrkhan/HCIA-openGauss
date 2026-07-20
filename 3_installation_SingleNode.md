@@ -259,9 +259,9 @@ omm@openGauss~$ gs_ctl reload -D $GAUSSHOME/data/single_node
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 ```
 
-**Configure Password Expiration Policy**
+**Disable Password Expiration Policy**
 
-> `NOTICE: The password has been expired, please change the password` - мұндай хабарлама шықпау үшін, төмендегі конфигурацияны жасау керек!  
+> `NOTICE: The password has been expired, please change the password` - болашақта мұндай хабарлама шықпау үшін, төмендегі конфигурацияны жасау керек!  
 
 ```shell
 # Disable Password Expiration
