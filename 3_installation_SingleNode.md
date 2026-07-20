@@ -420,8 +420,8 @@ GRANT CREATE ON TABLESPACE tbspace1 TO user1;
 CREATE TABLE student (
     student_id INT,
     student_name VARCHAR(30),
-    student_gender VARCHAR(6)
-    student_birth DATE,
+    student_gender VARCHAR(6),
+    student_birth DATE
 ) TABLESPACE tbspace1;
 ```
 
@@ -434,8 +434,8 @@ CREATE TABLE teacher (
     teacher_id INT,
     teacher_name VARCHAR(30),
     teacher_jobtitle VARCHAR(20),
-    teacher_gender VARCHAR(6)
-    teacher_age DATE,
+    teacher_gender VARCHAR(6),
+    teacher_age DATE
 );
 ```
 
