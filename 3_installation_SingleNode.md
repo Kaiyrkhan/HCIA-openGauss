@@ -165,7 +165,7 @@ omm@openGauss~$ gsql -d postgres -p 5432 -r
 **Қосымша ақпарат!**
 
 ```shell
-# Құпиясөзді өзгерту
+# Құпиясөзді өзгерту (Optional)
 
 ALTER ROLE omm IDENTIFIED BY 'new_password' REPLACE 'old_password';
 ```
@@ -190,7 +190,7 @@ student@openGauss~$ sysctl kernel.sem
 ![images](./images/opengauss_kernel_semaphore.png)
 
 ```shell
-# import Demo Database
+# import Demo Database (Optional)
 
 omm@openGauss~$ cd /opt/openGauss/simpleInstall
 omm@openGauss~$ gsql -d postgres -U omm -W "Huawei@123" -f school.sql
@@ -217,20 +217,17 @@ $ netstat -tulpn | grep 5432
 ```shell
 omm@openGauss~$ echo $GAUSSHOME
 /opt/openGauss
-```
 
-```shell
-# openGauss Database
-# status | start | stop | restart | reload
+# openGauss Database Service
 
 Status
 gs_ctl query -D $GAUSSHOME/data/single_node
 
-Stop
-gs_ctl stop -D $GAUSSHOME/data/single_node -m fast
-
 Start
 gs_ctl start -D $GAUSSHOME/data/single_node -Z single_node
+
+Stop
+gs_ctl stop -D $GAUSSHOME/data/single_node -m fast
 
 Restart
 gs_ctl restart -D $GAUSSHOME/data/single_node -Z single_node
@@ -239,8 +236,10 @@ Reload
 gs_ctl reload -D $GAUSSHOME/data/single_node
 ```
 
+> **`pg_hba.conf`** файлдың ішіндегі **`trust`** мәнін **`sha256`** мәніне өзгертетін болсаңыз, database-ге кірген кезде **құпиясөз**ді сұрайтын болады!
+
 ```shell
-# pg_hba.conf файлдың ішіндегі "trust" мәнін "sha256" мәніне өзгертетін болсаңыз, database-ге кірген кезде құпиясөзді сұрайтын болады
+# Configure Database Client Authentication (Optional)
 
 omm@openGauss~$ grep "trust" /opt/openGauss/data/single_node/pg_hba.conf
 
@@ -257,12 +256,8 @@ host    all         all     127.0.0.1/32   sha256
 host    all         all     ::1/128        sha256
 
 omm@openGauss~$ gs_ctl reload -D $GAUSSHOME/data/single_node
-omm@openGauss~$ gs_ctl query -D $GAUSSHOME/data/single_node
 
-# Нәтижені тексеру
 omm@openGauss~$ gsql -d postgres -p 5432 -r
-omm@openGauss~$ gsql -d school -p 5432 -r
-omm@openGauss~$ gsql -d finance -p 5432 -r
 ```
 
 ```shell
