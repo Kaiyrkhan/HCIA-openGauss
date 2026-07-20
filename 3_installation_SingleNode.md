@@ -298,6 +298,9 @@ echo -e "  \033[1;33mgsql -d postgres -p 5432 -r\033[0m\n"
 echo -e "openGauss database user: \033[1;33momm\033[0m"
 echo -e "openGauss database password: \033[1;33mHuawei@123\033[0m\n"
 ```
+```shell
+omm@openGauss~$ bash
+```
 
 **Allow the omm User to Reboot and Shut Down the System**
 
