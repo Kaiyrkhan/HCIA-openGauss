@@ -348,7 +348,7 @@ CTRL+L
 student@openGauss~$ sudo systemctl daemon-reload
 student@openGauss~$ sudo systemctl enable opengauss
 
-student@openGauss~$ su - omm -c 'source ~/.bashrc; gs_ctl stop -D /opt/openGauss/data/single_node -m fast'
+student@openGauss~$ sudo su - omm -c 'source ~/.bashrc; gs_ctl stop -D /opt/openGauss/data/single_node -m fast'
 server stopped
 
 student@openGauss~$ sudo systemctl start opengauss
