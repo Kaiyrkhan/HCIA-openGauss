@@ -64,8 +64,7 @@ student@openGauss~$ gdown --version
 gdown 5.2.2 at /home/student/.local/lib/python3.9/site-packages
 ```
 
-> Google Drive: https://drive.google.com/file/d/1qUgH31Z1CxEkQ-PuPnanpp7i9Afn5qm9/view?usp=sharing  
-> Google Drive download File ID: 1qUgH31Z1CxEkQ-PuPnanpp7i9Afn5qm9  
+> Google Drive download File ID: **1qUgH31Z1CxEkQ-PuPnanpp7i9Afn5qm9**  
 
 ```shell
 student@openGauss~$ gdown 1qUgH31Z1CxEkQ-PuPnanpp7i9Afn5qm9
