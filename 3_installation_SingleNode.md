@@ -214,7 +214,7 @@ $ ss -tulpn | grep 5432
 $ netstat -tulpn | grep 5432
 ```
 
-**openGauss Database Services**
+**openGauss Database Service Management**
 ```shell
 omm@openGauss~$ echo $GAUSSHOME
 /opt/openGauss
@@ -276,7 +276,7 @@ omm@openGauss~$ grep -n "password_effect_time" $GAUSSHOME/data/single_node/postg
 omm@openGauss~$ grep -n "password_notify_time" $GAUSSHOME/data/single_node/postgresql.conf
 ```
 
-**Configure profile**
+**Disable Command Notification**
 
 > `To run a command as administrator(user "root"),use "sudo <command>".` - мұндай хабарлама шықпау үшін, төмендегі конфигурацияны жасау керек!
 
