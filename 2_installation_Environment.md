@@ -141,9 +141,9 @@ student@openGauss~$ sudo systemctl status firewalld
 
 ```shell
 student@openGauss~$ locale
-
 student@openGauss~$ localectl set-locale LANG=en_US.UTF-8
-student@openGauss~$ echo 'export LANG=en_US.UTF-8' >> /etc/profile
+
+student@openGauss~$ echo "export LANG=en_US.UTF-8" | sudo tee -a /etc/profile
 student@openGauss~$ source /etc/profile
 
 student@openGauss~$ locale
