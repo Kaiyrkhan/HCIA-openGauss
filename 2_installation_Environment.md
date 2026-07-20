@@ -114,6 +114,7 @@ student@openGauss~$ sudo systemctl status firewalld
 student@openGauss~$ sudo systemctl is-enabled firewalld
 
 student@openGauss~$ sudo firewall-cmd --zone=public --add-port=5432/tcp --permanent
+student@openGauss~$ sudo firewall-cmd --zone=public --add-port=5433/tcp --permanent
 student@openGauss~$ sudo firewall-cmd --reload
 student@openGauss~$ sudo firewall-cmd --list-ports
 ```
