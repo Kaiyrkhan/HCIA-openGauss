@@ -4,20 +4,28 @@
 omm@openGauss~$ gsql -d postgres -p 5432 -r
 
 # Create a Database User
-openGauss=# CREATE USER user1 IDENTIFIED BY 'Huawei@123';
+CREATE USER user1 IDENTIFIED BY 'Huawei@123';
 
 # Create a Database
-openGauss=# CREATE DATABASE db1 OWNER user1;
+CREATE DATABASE school OWNER user1;
 
-openGauss=# \l
+\l
 
-openGauss=# \c db1
-db1=# GRANT USAGE, CREATE ON SCHEMA public TO user1;
-db1=# \q
+\c school
+GRANT USAGE, CREATE ON SCHEMA public TO user1;
 
-omm@openGauss~$ gsql -d db1 -U user1 -p 5432 -r
+\q
 
-db1=>
+omm@openGauss~$ gsql -d school -U user1 -p 5432 -r
+
+CREATE TABLE teacher (
+    teacher_id INT,
+    teacher_name VARCHAR(30),
+    teacher_jobtitle VARCHAR(20),
+    teacher_gender VARCHAR(6)
+    teacher_age DATE,
+);
+
 CREATE TABLE student (
     student_id INT,
     student_name VARCHAR(30),
@@ -25,13 +33,12 @@ CREATE TABLE student (
     student_gender VARCHAR(6)
 );
 
-db1=> \dt
+\dt
 
  Schema |  Name   | Type  | Owner |             Storage
 --------+---------+-------+-------+----------------------------------
  public | student | table | user1 | {orientation=row,compression=no}
 
-db1=>
 INSERT INTO student (student_id, student_name, student_birth, student_gender) VALUES
 (1001, 'John', '2012-01-15', 'Male'),
 (1002, 'Mary', '2013-03-22', 'Female'),
@@ -44,7 +51,7 @@ INSERT INTO student (student_id, student_name, student_birth, student_gender) VA
 (1009, 'Robert', '2014-02-11', 'Male'),
 (1010, 'Jennifer', '2008-10-01', 'Female');
 
-db1=> SELECT * FROM student;
+SELECT * FROM student;
 
  student_id | student_name |     student_birth     | student_gender
 ------------+--------------+---------------------+----------------
@@ -59,8 +66,9 @@ db1=> SELECT * FROM student;
        1009 | Robert       | 2014-02-11 00:00:00 | Male
        1010 | Jennifer     | 2008-10-01 00:00:00 | Female
 
-db1=> \q
+\q
 ```
+
 > GRANT USAGE, CREATE ON SCHEMA public TO user1;  
 > GRANT CREATE, USAGE, ALTER, DROP, COMMENT ON SCHEMA public TO user1;  
 > GRANT ALL PRIVILEGES ON SCHEMA public TO user1;  
