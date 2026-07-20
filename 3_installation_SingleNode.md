@@ -478,6 +478,15 @@ CREATE TABLE teacher (
 ```
 
 ```shell
+\dt
+
+Schema |  Name   | Type  | Owner |             Storage
+--------+---------+-------+-------+----------------------------------
+ public | student | table | omm   | {orientation=row,compression=no}
+ public | teacher | table | omm   | {orientation=row,compression=no}
+```
+
+```shell
 # Query the Tablespace usage
 
 SELECT PG_TABLESPACE_SIZE('tbspace1');
