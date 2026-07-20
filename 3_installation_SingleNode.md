@@ -301,6 +301,7 @@ echo -e "openGauss database password: \033[1;33mHuawei@123\033[0m\n"
 ```shell
 omm@openGauss~$ bash
 ```
+![images](./images/opengauss_login_info_display.png)
 
 **Allow the omm User to Reboot and Shut Down the System**
 
