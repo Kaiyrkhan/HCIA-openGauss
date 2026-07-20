@@ -242,14 +242,14 @@ gs_ctl reload -D $GAUSSHOME/data/single_node
 ```shell
 # Configure Database Client Authentication (Optional)
 
-omm@openGauss~$ grep "trust" /opt/openGauss/data/single_node/pg_hba.conf
+omm@openGauss~$ grep -n "trust" /opt/openGauss/data/single_node/pg_hba.conf
 
 TYPE    DATABASE    USER    ADDRESS        METHOD
 local   all         all                    trust
 host    all         all     127.0.0.1/32   trust
 host    all         all     ::1/128        trust
 
-omm@openGauss~$ nano /opt/openGauss/data/single_node/pg_hba.conf
+omm@openGauss~$ nano -l /opt/openGauss/data/single_node/pg_hba.conf
 
 TYPE    DATABASE    USER    ADDRESS        METHOD
 local   all         all                    sha256
