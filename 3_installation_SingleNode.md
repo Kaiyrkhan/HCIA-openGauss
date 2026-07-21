@@ -38,6 +38,8 @@ New Password: 123
 
 ```shell
 student@openGauss~$ id omm
+uid=1001(omm) gid=1001(dbgroup) groups=1001(dbgroup)
+
 student@openGauss~$ getent passwd | grep omm
 student@openGauss~$ getent group | grep dbgroup
 ```
