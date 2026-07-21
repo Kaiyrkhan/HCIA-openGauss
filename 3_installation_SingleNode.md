@@ -315,22 +315,6 @@ omm@openGauss~$ bash
 ```
 ![images](./images/opengauss_login_info_display.png)
 
-**Allow the omm User to Reboot and Shut Down the System**
-
-> **omm қолданушы** жүйені `Reboot` немесе `Shutdown` жасай алу үшін, төмендегі конфигурацияны жасау керек!  
-
-```shell
-student@openGauss~$ sudo nano /etc/sudoers
-немесе
-student@openGauss~$ sudo visudo
-# %wheel        ALL=(ALL)       NOPASSWD: ALL
-omm ALL=(ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/poweroff
-
-omm@openGauss~$ sudo reboot
-omm@openGauss~$ sudo shutdown -h now
-omm@openGauss~$ sudo poweroff
-```
-
 **Create the openGauss systemd Service**
 ```shell
 student@openGauss~$ sudo nano /etc/systemd/system/opengauss.service
@@ -366,6 +350,22 @@ student@openGauss~$ sudo su - omm -c 'source ~/.bashrc; gs_ctl stop -D /opt/open
 server stopped
 student@openGauss~$ sudo systemctl start opengauss
 student@openGauss~$ sudo systemctl status opengauss --no-pager
+```
+
+**Allow the omm User to Reboot and Shut Down the System**
+
+> **omm қолданушы** жүйені `Reboot` немесе `Shutdown` жасай алу үшін, төмендегі конфигурацияны жасау керек!  
+
+```shell
+student@openGauss~$ sudo nano /etc/sudoers
+немесе
+student@openGauss~$ sudo visudo
+# %wheel        ALL=(ALL)       NOPASSWD: ALL
+omm ALL=(ALL) NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/poweroff
+
+omm@openGauss~$ sudo reboot
+omm@openGauss~$ sudo shutdown -h now
+omm@openGauss~$ sudo poweroff
 ```
 
 **Create a Tablespace Directory**
