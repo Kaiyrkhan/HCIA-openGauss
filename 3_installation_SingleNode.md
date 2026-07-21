@@ -382,7 +382,7 @@ omm@openGauss~$ sudo poweroff
 
 **Create a Tablespace Directory**
 ```shell
-student@openGauss~$ sudo mkdir -p /opt/tablespace
+student@openGauss~$ sudo mkdir /opt/tablespace
 student@openGauss~$ sudo chown -R omm:dbgroup /opt/tablespace
 student@openGauss~$ sudo chmod 700 /opt/tablespace
 ```
