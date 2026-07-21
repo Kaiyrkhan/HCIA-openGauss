@@ -143,6 +143,30 @@ db_state: Normal
 ```
 ![images](./images/opengauss_gsctl-query.png)
 
+**openGauss Database Service Management**
+
+```shell
+omm@openGauss~$ echo $GAUSSHOME
+/opt/openGauss
+```
+
+```shell
+Status
+gs_ctl query -D $GAUSSHOME/data/single_node
+
+Start
+gs_ctl start -D $GAUSSHOME/data/single_node -Z single_node
+
+Stop
+gs_ctl stop -D $GAUSSHOME/data/single_node -m fast
+
+Restart
+gs_ctl restart -D $GAUSSHOME/data/single_node -Z single_node
+
+Reload
+gs_ctl reload -D $GAUSSHOME/data/single_node
+```
+
 **Connecting to openGauss**
 
 ```shell
@@ -217,29 +241,6 @@ student@openGauss~$ sudo firewall-cmd --list-all
 
 $ ss -tulpn | grep 5432
 $ netstat -tulpn | grep 5432
-```
-
-**openGauss Database Service Management**
-```shell
-omm@openGauss~$ echo $GAUSSHOME
-/opt/openGauss
-```
-
-```shell
-Status
-gs_ctl query -D $GAUSSHOME/data/single_node
-
-Start
-gs_ctl start -D $GAUSSHOME/data/single_node -Z single_node
-
-Stop
-gs_ctl stop -D $GAUSSHOME/data/single_node -m fast
-
-Restart
-gs_ctl restart -D $GAUSSHOME/data/single_node -Z single_node
-
-Reload
-gs_ctl reload -D $GAUSSHOME/data/single_node
 ```
 
 **Configure Database Client Authentication (Optional)**
