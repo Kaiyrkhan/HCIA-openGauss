@@ -139,7 +139,7 @@ omm@openGauss~$ source ~/.bashrc
 
 ```shell
 omm@openGauss~$ ps ux | grep gaussdb
-/opt/openGauss/bin/gaussdb -D /opt/openGauss/data/single_node
+/opt/openGauss/bin/gaussdb -D $GAUSSHOME/data/single_node
 ```
 ![images](./images/opengauss_ps.png)
 
