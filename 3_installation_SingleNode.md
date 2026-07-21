@@ -114,7 +114,7 @@ omm@openGauss~$
 omm@openGauss~$ cd /opt/openGauss/simpleInstall
 
 omm@openGauss~$ sh install.sh -w "Huawei@123"
-Would you like to create a demo database (yes/no)? yes
+Would you like to create a demo database (yes/no)? no
 ```
 `-w` – дерекқорға құпиясөз орнату  
 
