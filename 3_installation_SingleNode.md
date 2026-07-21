@@ -354,7 +354,7 @@ student@openGauss~$ sudo systemctl start opengauss
 student@openGauss~$ sudo systemctl status opengauss --no-pager
 ```
 
-> `/etc/rc.d/rc.local is not marked executable, skipping` деген хабарлама шығып жатса, төмендегі команданы орындасаңыз болады (бірақ, міндетті емес)  
+> `/etc/rc.d/rc.local is not marked executable, skipping` деген хабарлама шығып жатса, төмендегі команданы орындасаңыз болады (міндетті емес)  
 ```shell
 student@openGauss~$ ls -l /etc/rc.d/rc.local
 -rw-r--r-- root root /etc/rc.d/rc.local
