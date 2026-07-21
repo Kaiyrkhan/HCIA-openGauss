@@ -42,7 +42,7 @@ Table - **System Requirements**
 ![images](./images/openEuler_hardware_devices.png)  
 
 login: **student**  
-password: **123**  
+password: **Huawei@123**  
 
 ```shell
 student@openGauss~$ sudo passwd student
