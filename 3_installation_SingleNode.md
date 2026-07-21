@@ -354,6 +354,16 @@ student@openGauss~$ sudo systemctl start opengauss
 student@openGauss~$ sudo systemctl status opengauss --no-pager
 ```
 
+> `/etc/rc.d/rc.local is not marked executable, skipping` деген хабарлама шығып жатса, төмендегі команданы орындасаңыз болады (бірақ, міндетті емес)  
+```shell
+student@openGauss~$ ls -l /etc/rc.d/rc.local
+-rw-r--r-- root root /etc/rc.d/rc.local
+
+student@openGauss~$ sudo chmod +x /etc/rc.d/rc.local
+student@openGauss~$ ls -l /etc/rc.d/rc.local
+-rwxr-xr-x root root /etc/rc.d/rc.local
+```
+
 **Allow the omm User to Reboot and Shut Down the System**
 
 > **omm қолданушы** жүйені `Reboot` немесе `Shutdown` жасай алу үшін, төмендегі конфигурацияны жасау керек!  
