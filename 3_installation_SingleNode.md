@@ -339,9 +339,11 @@ CTRL+O, ENTER, CTRL+X
 CTRL+L
 
 student@openGauss~$ sudo systemctl daemon-reload
-student@openGauss~$ sudo systemctl enable opengauss
 
-student@openGauss~$ sudo systemctl restart opengauss
+student@openGauss~$ sudo systemctl enable opengauss
+student@openGauss~$ sudo systemctl is-enabled opengauss
+
+student@openGauss~$ sudo systemctl start opengauss
 student@openGauss~$ sudo systemctl status opengauss --no-pager
 
 немесе
