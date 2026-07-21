@@ -27,6 +27,12 @@ student@openGauss~$ ping -c2 openGauss
 ```
 
 **Configure openGauss User and Group**
+
+```shell
+student@openGauss~$ getent group
+student@openGauss~$ sudo groupdel oeaware
+```
+
 ```shell
 student@openGauss~$ sudo groupadd dbgroup
 
