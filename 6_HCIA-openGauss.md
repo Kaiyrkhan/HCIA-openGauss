@@ -1,0 +1,1 @@
+# HCIA-openGauss Lab Guide
